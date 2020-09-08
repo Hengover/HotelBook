@@ -1,0 +1,19 @@
+.offer{
+    grid-column: center-start / center-end;
+    margin: 10rem 0;
+
+    &__box{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    &__housing{}
+
+    &__img{
+        width: 100%;
+        border-radius: .3rem;
+        margin-bottom: 1rem;
+    }
+}

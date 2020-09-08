@@ -1,0 +1,178 @@
+.search {
+    background-color: $color-grey;
+    grid-column: 1 / -1;
+    display: grid;
+    @include centerEl;
+
+    &__box{
+        grid-column: center-start / center-end;
+        margin: 5rem 0;
+    }
+
+    &__form{
+        display: grid; 
+        grid-template-columns: minmax(min-content, 35rem) minmax(min-content, 15rem) repeat(3, 7.3rem) minmax(min-content,max-content);  
+        grid-template-rows: 5rem;
+        justify-content: center;
+
+        &>*{
+            outline: .2rem solid $color-green;
+            border: none;
+        }
+    }
+
+    &__field{
+        padding-left: 1rem;
+        font-size: 1.4rem;
+        font-family: inherit;
+
+        &--place{
+
+        }
+
+        &--checkin{
+
+
+        }
+
+        &--adults{
+
+        }
+
+        &--rooms{
+
+        }
+
+        &--night{
+
+        }
+
+    }
+
+    &__btn{
+        padding: 1.3rem 2rem;
+        background-color: $color-blue-light;
+        color: $color-white;
+        font-size: 1.6rem;
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover{
+            background-color: $color-blue-dark;
+            transition: all .2s;
+        }
+    }
+
+    &__svg{
+        width: 2rem;
+        height: 2rem;
+        fill: $color-white;
+        line-height: 0;
+        margin-right: .7rem;
+    }
+}
+
+.form-small{
+    background-color: $color-gold;
+    padding: 1.3rem;
+    font-family: inherit;
+    border-radius: .3rem;
+
+    &__box-field{
+        display: flex;
+        flex-direction: column;
+
+        &--option{
+            margin-top: 1rem;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+
+        &:nth-child(3){
+            margin-top: -1rem;
+        }
+    }
+
+    &__label{
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+
+    &__field{
+        padding: .8rem 1rem;
+        border: none;
+        font-size: 1.4rem;
+        border-radius: .2rem;
+                font-family: inherit;
+
+    }
+
+    &__box-option{
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__select{
+        padding: .8rem 1rem;
+        width: 100%;
+        border: none;
+        font-size: 1.4rem;
+        border-radius: .2rem;
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+
+    &__option{}
+
+    &__btn{
+        width: 100%;
+        cursor: pointer;
+        border: none;
+        padding: 1rem 2rem;
+    }
+}
+
+.form-specify{
+    border: .1rem solid $color-grey-1;
+    border-radius: .3rem;
+
+    &__heading{
+        margin-left: .5rem;
+    }
+
+    &__fieldset{
+        border: none;
+    }
+
+    &>*:not(:first-child) {
+        border-top: .1rem solid $color-grey-1;
+    }
+
+    &__legend{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    &__list{}
+
+    &__item{
+        list-style: none;
+
+        display: flex;
+        align-items: center;
+    }
+
+    &__checkbox{}
+
+    &__label{
+        font-size: 1.3rem;
+        margin-left: .5rem;
+    }
+}

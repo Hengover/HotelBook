@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>HotelBook</title>
+</head>
+<body class="container-search">
+    <header class="header">
+        <div class="header__logo-box">
+            <img src="./img/logo.png" alt="header" class="header__logo-img"> 
+        </div>
+    </header>
+    
+
+    <main class="search-main">
+        <section class="filters">
+                <form class="form-small">
+                    <h2 class="heading-tertiary">Search</h2>
+                    <div class="form-small__box-field">
+                        <label for="City" class="form-small__label">Destination/City</label>
+                        <input type="text" class="form-small__field" id="City" placeholder="City">
+                    </div>
+                    <div class="form-small__box-field">
+                        <label for="Check" class="form-small__label">Check-in date</label>
+                        <input type="date" class="form-small__field" id="Check">
+                    </div>
+                    <div class="form-small__box-field form-small__box-field--option">
+                        <select name="form-small__select" id="" class="form-small__select">
+                            <option class="form-small__option" value="1">1 Adult</option>
+                            <option class="form-small__option" value="2">2 Adults</option>
+                            <option class="form-small__option" value="3">3 Adults</option>
+                            <option class="form-small__option" value="4">4 Adults</option>
+                            <option class="form-small__option" value="5">5 Adults</option>
+                            <option class="form-small__option" value="6">6 Adults</option>
+                            <option class="form-small__option" value="7">7 Adults</option>
+                            <option class="form-small__option" value="8">8 Adults</option>
+                            <option class="form-small__option" value="9">9 Adults</option>
+                            <option class="form-small__option" value="10">10 Adults</option>
+                        </select>
+                    </div>
+                    <div class="form-small__box-field form-small__box-field--option form-small__box-option">
+                        <select name="form-small__select" id="" class="form-small__select">
+                            <option class="form-small__option" value="1">1 Room</option>
+                            <option class="form-small__option" value="2">2 Rooms</option>
+                            <option class="form-small__option" value="3">3 Rooms</option>
+                            <option class="form-small__option" value="4">4 Rooms</option>
+                            <option class="form-small__option" value="5">5 Rooms</option>
+                            <option class="form-small__option" value="6">6 Rooms</option>
+                            <option class="form-small__option" value="7">7 Rooms</option>
+                            <option class="form-small__option" value="8">8 Rooms</option>
+                            <option class="form-small__option" value="9">9 Rooms</option>
+                            <option class="form-small__option" value="10">10 Rooms</option>
+                        </select>
+                        
+                        <select name="form-small__select" id="" class="form-small__select">
+                            <option class="form-small__option" value="1">1 Night</option>
+                            <option class="form-small__option" value="2">2 Nights</option>
+                            <option class="form-small__option" value="3">3 Nights</option>
+                            <option class="form-small__option" value="4">4 Nights</option>
+                            <option class="form-small__option" value="5">5 Nights</option>
+                            <option class="form-small__option" value="6">6 Nights</option>
+                            <option class="form-small__option" value="7">7 Nights</option>
+                            <option class="form-small__option" value="8">8 Nights</option>
+                            <option class="form-small__option" value="9">9 Nights</option>
+                            <option class="form-small__option" value="10">10 Nights</option>
+                        </select>
+                    </div>
+                    <button class="form-small__btn btn">Search</button>
+                </form>
+                <form class="form-specify">
+                    <h2 class="heading-tertiary form-specify__heading">Filter:</h2>
+                    <fieldset class="form-specify__fieldset">
+                        <legend class="form-specify__legend">
+                            Hotel class
+                        </legend>
+                        <ul class="form-specify__list">
+                            <li class="form-specify__item">
+                                <input type="checkbox" class="form-specify__checkbox" id="5" value="5">
+                                <label class="form-specify__label" for="5">5 Stars</label>
+                            </li>
+                            <li class="form-specify__item">
+                                <input type="checkbox" class="form-specify__checkbox" id="4" value="4">
+                                <label class="form-specify__label" for="4">4 Stars</label>
+                            </li>
+                            <li class="form-specify__item">
+                                <input type="checkbox" class="form-specify__checkbox" id="3" value="3">
+                                <label class="form-specify__label" for="3">3 Stars</label>
+                            </li>
+                            <li class="form-specify__item">
+                                <input type="checkbox" class="form-specify__checkbox" id="2" value="2">
+                                <label class="form-specify__label" for="2">2 Stars</label>
+                            </li>
+                            <li class="form-specify__item">
+                                <input type="checkbox" class="form-specify__checkbox" id="1" value="1">
+                                <label class="form-specify__label" for="1">1 Star</label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <fieldset class="form-specify__fieldset">
+                        <legend class="form-specify__legend">
+                            Amenities
+                        </legend>
+                        <ul class="form-specify__list">
+                            <li class="form-specify__item">
+                                <input type="checkbox" class="form-specify__checkbox" id="Air conditioning" value="air_conditioning">
+                                <label class="form-specify__label" for="Air conditioning">Air conditioning</label>
+                            </li>
+                            <li class="form-specify__item">
+                                <input type="checkbox" class="form-specify__checkbox" id="Airport" value="airport_transportation">
+                                <label class="form-specify__label" for="Airport">Airport transportation</label>
+                            </li>
+                            <li class="form-specify__item">
+                                <input type="checkbox" class="form-specify__checkbox" id="Baggage" value="Baggage Storage">
+                                <label class="form-specify__label" for="Baggage">Baggage Storage</label>
+                            </li>
+                            <li class="form-specify__item">
+                                <input type="checkbox" class="form-specify__checkbox" id="Bar" value="bar_lounge">
+                                <label class="form-specify__label" for="Bar">Bar/Lounge</label>
+                            </li>
+                            <li class="form-specify__item">
+                                <input type="checkbox" class="form-specify__checkbox" id="Dry Cleaning" value="Dry Cleaning">
+                                <label class="form-specify__label" for="Dry Cleaning">Dry Cleaning</label>
+                            </li>
+                            <li class="form-specify__item">
+                                <input type="checkbox" class="form-specify__checkbox" id="wifi" value="free_wireless_internet_in_room">
+                                <label class="form-specify__label" for="wifi">Free Wifi</label>
+                            </li>
+                            <li class="form-specify__item">
+                                <input type="checkbox" class="form-specify__checkbox" id="Pool" value="Outdoor Pool">
+                                <label class="form-specify__label" for="Pool">Outdoor pool</label>
+                            </li>
+                            <li class="form-specify__item">
+                                <input type="checkbox" class="form-specify__checkbox" id="Parking Garage" value="Parking Garage">
+                                <label class="form-specify__label" for="Parking Garage">Parking Garage</label>
+                            </li>
+                            <li class="form-specify__item">
+                                <input type="checkbox" class="form-specify__checkbox" id="Sauna" value="Sauna">
+                                <label class="form-specify__label" for="Sauna">Sauna</label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </form>
+            </section>
+        <section class="search-list">
+            <article class="search-list__article">
+                    <div class="search-list__description">
+                        <div class="search-list__head">
+                            <h4 class="heading-fourth search-list__heading">Hotel van de Vijsel</h4>
+                            <address class="search-list__address">Asterweg 27-37, Amsterdam, NH, 1031 HM, Netherlands</address>
+                        </div>
+                        <figure class="search-list__figure">
+                            <img src="./img/Cottages.jpg" alt="" class="search-list__img">
+                        </figure>
+                        <div class="search-list__detail">
+                            <p class="search-list__local-name">
+                                <svg class="search-list__svg-name">
+                                    <use xlink:href="./img/sprite.svg#icon-globe"></use>
+                                </svg>
+                                <span>Amsterdam</span>
+                            </p>
+                            <p class="search-list__class">
+                                <span class="search-list__number-class">5</span>
+                                <svg class="search-list__svg-class">
+                                    <use xlink:href="./img/sprite.svg#icon-star-full"></use>
+                                </svg>
+                            </p>
+                            <ul class="search-list__amneties">
+                                <li class="search-list__amenity">
+                                    <svg class="search-list__svg-amenity">
+                                        <use xlink:href="./img/sprite.svg#icon-checkmark-outline"></use>
+                                    </svg>
+                                    <span>Pool</span>    
+                                </li>
+                                <li class="search-list__amenity">
+                                    <svg class="search-list__svg-amenity">
+                                        <use xlink:href="./img/sprite.svg#icon-checkmark-outline"></use>
+                                    </svg>
+                                    <span>Room services</span> 
+                                </li>
+                            </ul>
+                            <p class="search-list__definition">Minimalist chic and smart design deliver everything you need </p>
+                        </div>
+                    </div>
+                    <aside class="search-list__price">
+                        <div class="search-list__rating-box">
+                            <p class="search-list__rating">Rating</p>
+                            <span class="search-list__rating-number">5.0</span>
+                        </div>
+                        <div class="search-list__cost-box">
+                            <span class="search-list__cost">$100</span>
+                            <a href="" class="btn">Continue</a>
+                        </div>
+                    </aside>
+            </article>
+            <article class="search-list__article">
+                <div class="search-list__description">
+                    <div class="search-list__head">
+                        <h4 class="heading-fourth search-list__heading">Hotel van de Vijsel</h4>
+                        <address class="search-list__address">Asterweg 27-37, Amsterdam, NH, 1031 HM, Netherlands</address>
+                    </div>
+                    <figure class="search-list__figure">
+                        <img src="./img/Cottages.jpg" alt="" class="search-list__img">
+                    </figure>
+                    <div class="search-list__detail">
+                        <p class="search-list__local-name">
+                            <svg class="search-list__svg-name">
+                                <use xlink:href="./img/sprite.svg#icon-globe"></use>
+                            </svg>
+                            <span>Amsterdam</span>
+                        </p>
+                        <p class="search-list__class">
+                            <span class="search-list__number-class">5</span>
+                            <svg class="search-list__svg-class">
+                                <use xlink:href="./img/sprite.svg#icon-star-full"></use>
+                            </svg>
+                        </p>
+                        <ul class="search-list__amneties">
+                            <li class="search-list__amenity">
+                                <svg class="search-list__svg-amenity">
+                                    <use xlink:href="./img/sprite.svg#icon-checkmark-outline"></use>
+                                </svg>
+                                <span>Pool</span>    
+                            </li>
+                            <li class="search-list__amenity">
+                                <svg class="search-list__svg-amenity">
+                                    <use xlink:href="./img/sprite.svg#icon-checkmark-outline"></use>
+                                </svg>
+                                <span>Room services</span> 
+                            </li>
+                        </ul>
+                        <p class="search-list__definition">Minimalist chic and smart design deliver everything you need </p>
+                    </div>
+                </div>
+                <aside class="search-list__price">
+                    <div class="search-list__rating-box">
+                        <p class="search-list__rating">Rating</p>
+                        <span class="search-list__rating-number">5.0</span>
+                    </div>
+                    <div class="search-list__cost-box">
+                        <span class="search-list__cost">$100</span>
+                        <a href="" class="btn">Continue</a>
+                    </div>
+                </aside>
+        </article>
+        </section>
+    </main>
+    
+    
+
+    <footer class="footer">
+        <div class="footer__logo-box">
+            <img src="./img/footer-logo.png" alt="Logo" class="footer__logo">
+        </div>
+        <p class="copyright">
+            &copy; 2020 HotelBook
+        </p>
+        <div class="footer__social">
+            <a href="#" class="footer__social-link">
+                <svg class="footer__svg">
+                    <use xlink:href="./img/sprite.svg#icon-google"></use>
+                </svg>
+            </a>
+            <a href="#" class="footer__social-link">
+                <svg class="footer__svg">
+                    <use xlink:href="./img/sprite.svg#icon-instagram"></use>
+                </svg>
+            </a>
+            <a href="#" class="footer__social-link">
+                <svg class="footer__svg">
+                    <use xlink:href="./img/sprite.svg#icon-linkedin"></use>
+                </svg>
+            </a>
+            <a href="#" class="footer__social-link">
+                <svg class="footer__svg">
+                    <use xlink:href="./img/sprite.svg#icon-tumblr"></use>
+                </svg>
+            </a>
+            <a href="#" class="footer__social-link">
+                <svg class="footer__svg">
+                    <use xlink:href="./img/sprite.svg#icon-twitter"></use>
+                </svg>
+            </a>
+            <a href="#" class="footer__social-link">
+                <svg class="footer__svg">
+                    <use xlink:href="./img/sprite.svg#icon-youtube"></use>
+                </svg>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

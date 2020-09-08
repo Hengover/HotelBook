@@ -1,0 +1,19 @@
+.header{
+    grid-column: 1 / -1;
+    background-color: $color-blue;  
+
+    display: grid;
+    @include centerEl;
+
+    &__logo-box{
+        grid-column: center-start / center-end;
+
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo-img{
+        width: 14rem;
+        height: auto;
+    }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>HotelBook</title>
+</head>
+<body class="container">
+    <header class="header">
+        <div class="header__logo-box">
+            <img src="./img/logo.png" alt="header" class="header__logo-img"> <!--"./img/logo.png"-->
+        </div>
+    </header>
+    
+    <section class="search">
+        <div class="search__box">
+            <form class="search__form" action="./search.html">
+                <input class="search__field search__field--place" type="text" placeholder="Where to?">
+                <input class="search__field search__field--checkin" type="date" placeholder="Check in">
+                <input class="search__field search__field--adults" type="number" min="0" max="100" placeholder="Adults">
+                <input class="search__field search__field--rooms" type="number" min="0" max="100" placeholder="Rooms">
+                <input class="search__field search__field--night" type="number" min="0" max="100" placeholder="Night">
+                <button class="search__btn">
+                    <svg class="search__svg">
+                        <use xlink:href="./img/sprite.svg#icon-search"></use>
+                    </svg>
+                    <span>Search</span>
+                </button>
+            </form>
+        </div>
+    </section>
+    <section class="offer">
+        <h2 class="heading-secondary">We offer you a choise...</h2>
+        <div class="offer__box">
+            <div class="offer__housing">
+                <img src="./img/Hotels.jpg" alt="Hotels" class="offer__img">
+                <h3 class="heading-tertiary">Hotels</h3>
+            </div>
+            <div class="offer__housing">
+                <img src="./img/Cottages.jpg" alt="Cottages" class="offer__img">
+                <h3 class="heading-tertiary">Cottages</h3>
+            </div>
+            <div class="offer__housing">
+                <img src="./img/Motels.jpg" alt="Motels" class="offer__img">
+                <h3 class="heading-tertiary">Motels</h3>
+            </div>
+            <div class="offer__housing">
+                <img src="./img/Resorts.jpg" alt="Resorts" class="offer__img">
+                <h3 class="heading-tertiary">Resorts</h3>
+            </div>
+            <div class="offer__housing">
+                <img src="./img/Villas.jpg" alt="Villas" class="offer__img">
+                <h3 class="heading-tertiary">Villas</h3>
+            </div>
+            <div class="offer__housing">
+                <img src="./img/Apartments.jpg" alt="Apartments" class="offer__img">
+                <h3 class="heading-tertiary">Apartments</h3>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__logo-box">
+            <img src="./img/footer-logo.png" alt="Logo" class="footer__logo">
+        </div>
+        <p class="copyright">
+            &copy; 2020 HotelBook
+        </p>
+        <div class="footer__social">
+            <a href="#" class="footer__social-link">
+                <svg class="footer__svg">
+                    <use xlink:href="./img/sprite.svg#icon-google"></use>
+                </svg>
+            </a>
+            <a href="#" class="footer__social-link">
+                <svg class="footer__svg">
+                    <use xlink:href="./img/sprite.svg#icon-instagram"></use>
+                </svg>
+            </a>
+            <a href="#" class="footer__social-link">
+                <svg class="footer__svg">
+                    <use xlink:href="./img/sprite.svg#icon-linkedin"></use>
+                </svg>
+            </a>
+            <a href="#" class="footer__social-link">
+                <svg class="footer__svg">
+                    <use xlink:href="./img/sprite.svg#icon-tumblr"></use>
+                </svg>
+            </a>
+            <a href="#" class="footer__social-link">
+                <svg class="footer__svg">
+                    <use xlink:href="./img/sprite.svg#icon-twitter"></use>
+                </svg>
+            </a>
+            <a href="#" class="footer__social-link">
+                <svg class="footer__svg">
+                    <use xlink:href="./img/sprite.svg#icon-youtube"></use>
+                </svg>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
