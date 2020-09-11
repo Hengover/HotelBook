@@ -1,11 +1,12 @@
 .search-main{
     grid-column: center-start / center-end;
-    display: flex; 
+    display: grid; 
+    grid-template-columns: minmax(min-content, 28rem) 1fr;
 }
 
 .filters{
     display: grid;
-    grid-template-columns: minmax(min-content, 28rem);
+    grid-template-columns: minmax(min-content, 1fr);
     grid-template-rows: repeat(2, max-content);
     grid-row-gap: 1rem;
     padding: 1rem;
@@ -14,10 +15,16 @@
 .search-list{
     display: grid;
     grid-template-columns: minmax(min-content, 1fr);
-    grid-template-rows: max-content;
-    grid-auto-rows: max-content;
+    grid-template-rows: repeat(2, max-content);
     grid-row-gap: 2rem;
     padding: 1rem;
+
+    &__article-box{
+        display: grid;
+        grid-template-rows: max-content;
+        grid-auto-rows: max-content;
+        grid-row-gap: 2rem;
+    }
 
     &__article{
         border: .1rem solid $color-grey-1;
@@ -181,5 +188,43 @@
         font-weight: 400;
         margin-bottom: .5rem;
         color: $color-red;
+    }
+
+    &__pagination{
+        display: flex;
+        justify-content: center;
+    }
+
+    &__pagination-button{
+        &,
+        &:visited,
+        &:link{
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.6rem;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        background-color: $color-blue-light-1;
+        color: $color-white;
+        transition: all .2s;
+        }
+
+        &:hover{
+            background-color: $color-blue;
+        }
+
+        &:active,
+        &:focus{
+            outline: none;
+        }
+
+        &:not(:last-child) {
+            margin-right: .7rem;
+        }
+    }
+
+    &__button-active{
+        background-color: $color-blue;
     }
 }
