@@ -41,15 +41,57 @@ if(elements.searchForm){
     });
 }
 
+//Search filter
+let stringClass;
+const searchFilter = async () => {
+    const queryPlace = state.search.locationId;
+    console.log(queryPlace);
+    const hotelClass = stringClass;
+
+        if(hotelClass) {
+            console.log(hotelClass);
+            try {
+                await state.search.getHotelFiltersList(queryPlace, hotelClass);
+
+                //Clear hotel and pagination box
+                searchView.clearResult();
+                searchView.clearPaginationBox();
+
+                //Render and Pagination
+                searchView.renderResultsClass(state.search.hotelList, searchView.rows, searchView.currentPage);
+                searchView.renderButtonsClass(state.search.hotelList, elements.searchPaginationBox, searchView.rows);
+            } catch(error){
+                alert(error);
+            }
+        }
+}  
+
 //Restore and render hotelsList on search page load and Pagination
 window.addEventListener('load', () => {
     if(elements.searchPage) {
         state.search = new Search();
         state.search.readStorage();
-        //Pagination
+
+        //Render and Pagination
         searchView.renderResults(state.search.hotelList, searchView.rows, searchView.currentPage);
         searchView.renderButtons(state.search.hotelList, elements.searchPaginationBox, searchView.rows);
+
+        //Search filter
+        elements.formSpecifyCheckboxAll.forEach(el => {
+            el.addEventListener('change', () =>{
+                if(el.checked){
+                        stringClass = el.value;
+                        searchFilter();
+                } else {
+                    //Arr.slice(0, el.value);
+                    console.log(stringClass);
+                }
+            });
+        });
     } 
 })
+
+
+
 
 
