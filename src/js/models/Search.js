@@ -36,6 +36,7 @@ export default class Search {
                 }
             })
             this.hotelList = res.data.data;
+            
             //Restore hotelList
             this.persistData();
             console.log(this.hotelList);

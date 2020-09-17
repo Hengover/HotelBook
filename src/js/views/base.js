@@ -9,6 +9,7 @@ export const elements = {
     searchPage: document.querySelector('.container-search'),
     searchHotelsBox: document.querySelector('.search-list__article-box'),
     searchPaginationBox: document.querySelector('.search-list__pagination'),
+    searchFormSmall: document.querySelector('.form-small'),
     formSpecify: document.querySelector('.form-specify'),
     formSpecifyCheckboxAll: document.querySelectorAll('.form-specify__checkbox'),
     formSpecifyCheckbox: document.querySelector('.form-specify__checkbox')

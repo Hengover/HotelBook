@@ -20,7 +20,6 @@ const limitDesription = text => {
 
 export const clearResult = () => {
     elements.searchHotelsBox.innerHTML = ''
-    //elements.searchPaginationBox.innerHTML = ''
 }
 
 export const clearPaginationBox = () => {
@@ -71,11 +70,11 @@ const renderHotel = hotel => {
             <aside class="search-list__price">
                 <div class="search-list__rating-box">
                     <p class="search-list__rating">Rating</p>
-                    <span class="search-list__rating-number">${hotel.rating}</span>
+                    <span class="number-rating">${hotel.rating}</span>
                 </div>
                 <div class="search-list__cost-box">
                     <span class="search-list__cost">${hotel.price}</span>
-                    <a href="#" class="btn">Continue</a>
+                    <a class="btn search-list__btn" href="#${hotel.location_id}">Continue</a>
                 </div>
             </aside>
         </article>
@@ -117,7 +116,7 @@ const renderHotelClass = hotel => {
                 </div>
                 <div class="search-list__cost-box">
                     <span class="search-list__cost">${hotel.price}</span>
-                    <a href="#" class="btn">Continue</a>
+                    <a class="btn search-list__btn" href="#${hotel.location_id}">Continue</a>
                 </div>
             </aside>
         </article>
@@ -163,8 +162,8 @@ const createButton = (page, items) => {
     return button;
 }
 
-//Filter hotel render and pagination
 
+//Filter hotel render and pagination
 export const renderResultsClass = (hotels, resPerPage, page) => {
     clearResult();
     //Render results of current page
