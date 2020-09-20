@@ -1,6 +1,6 @@
 import axios from 'axios'; //Import axios package
 
-export default class Hotels{
+export default class Hotel{
     constructor(id) {
         this.id = id;
     }
@@ -15,9 +15,21 @@ export default class Hotels{
                 }
             })
             this.Hotel = res.data.data[0];
+            this.persistData();
             console.log(this.Hotel);
         } catch(error) {
             console.log(error);
         }
+    }
+
+    persistData() {
+        localStorage.setItem('hotel', JSON.stringify(this.Hotel)); //It's always be a string.c JSON.stringify-convert arrays ot a string
+    }
+
+    readStorage() {
+        const storage = JSON.parse(localStorage.getItem('hotel'));
+        //Restore likes from the localStorage
+        if (storage) this.Hotel = storage; //if storage variable undefined or null
+        return this.Hotel;
     }
 }

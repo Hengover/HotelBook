@@ -74,7 +74,7 @@ const renderHotel = hotel => {
                 </div>
                 <div class="search-list__cost-box">
                     <span class="search-list__cost">${hotel.price}</span>
-                    <a class="btn search-list__btn" href="#${hotel.location_id}">Continue</a>
+                    <a class="btn-link search-list__btn" href="#${hotel.location_id}">Continue</a>
                 </div>
             </aside>
         </article>

@@ -12,5 +12,8 @@ export const elements = {
     searchFormSmall: document.querySelector('.form-small'),
     formSpecify: document.querySelector('.form-specify'),
     formSpecifyCheckboxAll: document.querySelectorAll('.form-specify__checkbox'),
-    formSpecifyCheckbox: document.querySelector('.form-specify__checkbox')
+    formSpecifyCheckbox: document.querySelector('.form-specify__checkbox'),
+    hotelDetails: document.querySelector('.section-details'),
+    hotelPage: document.querySelector('.hotel-page'),
+    asideHotel: document.querySelector('.aside')
 }

@@ -8,6 +8,7 @@ import '../sass/main.scss';
 import Search from './models/Search';
 import Hotel from './models/Hotel';
 import * as searchView from './views/searchView';
+import * as hotelView from './views/hotelView';
 import { elements } from './views/base';
 
 const state = {};
@@ -71,6 +72,7 @@ const searchFilter = async () => {
 
 //Restore and render hotelsList on search page load and Pagination
 window.addEventListener('load', () => {
+    //Search page
     if(elements.searchPage) {
         state.search = new Search();
         state.search.readStorage();
@@ -98,7 +100,12 @@ window.addEventListener('load', () => {
                 ['hashchange', 'load'].forEach(event => window.addEventListener(event, targetHotel));
             }  
         });
-    } 
+    } else if(elements.hotelPage){
+        state.hotel = new Hotel();
+        const hotelDetails = state.hotel.readStorage();
+        hotelView.renderReiew(hotelDetails);
+        hotelView.renderHotel(hotelDetails);
+    }
 });
 
 const targetHotel = async () => {
@@ -106,8 +113,8 @@ const targetHotel = async () => {
     if(id){
         state.hotel = new Hotel(id);
         try {
-            state.hotel.getHotelDetails();
-            //window.location = '../hotel.html';
+            await state.hotel.getHotelDetails();
+            hotelView.redirect();
         } catch(error) {
             alert(error);
         }
