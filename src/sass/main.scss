@@ -3,15 +3,19 @@
 @import 'abstracts/mixins';
 @import 'abstracts/variables';
 
+@import 'base/animation';
 @import 'base/base';
 @import 'base/typography';
 
 @import 'components/button';
+@import 'components/card';
 @import 'components/form';
 
+@import 'layout/content';
 @import 'layout/footer';
 @import 'layout/header';
 
 @import 'pages/home';
 @import 'pages/hotel';
+@import 'pages/like';
 @import 'pages/search';

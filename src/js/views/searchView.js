@@ -19,11 +19,23 @@ const limitDesription = text => {
 }
 
 export const clearResult = () => {
-    elements.searchHotelsBox.innerHTML = ''
+    elements.searchHotelsBox.innerHTML = '';
 }
 
 export const clearPaginationBox = () => {
-    elements.searchPaginationBox.innerHTML = ''
+    elements.searchPaginationBox.innerHTML = '';
+}
+
+export const openSearch = () => {
+    elements.sectionList.style.display = 'grid';
+    elements.sectionOffer.style.display = 'none';
+    elements.hotelDetails.style.display = 'none';
+    elements.searchHotelsBox.innerHTML = '';
+    elements.asideSearch.style.display = 'none';
+}
+
+export const openAsideFilter = () => {
+    elements.asideSearch.style.display = 'grid';
 }
 
 const renderHotel = hotel => {
@@ -112,7 +124,7 @@ const renderHotelClass = hotel => {
             <aside class="search-list__price">
                 <div class="search-list__rating-box">
                     <p class="search-list__rating">Rating</p>
-                    <span class="search-list__rating-number">${hotel.rating}</span>
+                    <span class="search-list__rating-number number-rating">${hotel.rating}</span>
                 </div>
                 <div class="search-list__cost-box">
                     <span class="search-list__cost">${hotel.price}</span>

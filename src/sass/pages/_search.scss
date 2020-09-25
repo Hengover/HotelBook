@@ -1,28 +1,23 @@
 .search-main{
     grid-column: center-start / center-end;
     display: grid; 
-    grid-template-columns: minmax(min-content, 28rem) 1fr;
-}
-
-.filters{
-    display: grid;
-    grid-template-columns: minmax(min-content, 1fr);
-    grid-template-rows: repeat(2, max-content);
-    grid-row-gap: 1rem;
-    padding: 1rem;
+    grid-template-columns: minmax(min-content, 20rem) 1fr;
 }
 
 .search-list{
-    display: grid;
-    grid-template-columns: minmax(min-content, 1fr);
+    display: none;
+    grid-template-columns: minmax(min-content, 20rem) minmax(min-content, 1fr);
     grid-template-rows: repeat(2, max-content);
-    grid-row-gap: 2rem;
-    padding: 1rem;
+    grid-column-gap: 2rem;
+    margin: 3rem 0;
+
+    &__card{
+        display: grid;
+        grid-row-gap: 2.3rem;
+    }
 
     &__article-box{
         display: grid;
-        grid-template-rows: max-content;
-        grid-auto-rows: max-content;
         grid-row-gap: 2rem;
     }
 
@@ -218,4 +213,10 @@
     &__button-active{
         background-color: $color-blue;
     }
+}
+
+.filters{
+    display: none;
+    grid-template-columns: minmax(min-content, 1fr);
+    grid-template-rows: max-content;
 }

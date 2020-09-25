@@ -19,18 +19,12 @@ body {
 
 .container{
     display: grid;
-    grid-template-rows: 8rem repeat(3, min-content);
-    @include centerEl;
-}
-
-.container-search{
-    display: grid;
-    grid-template-rows: 8rem 1fr auto;
+    grid-template-rows: 8rem max-content 1fr auto;
     min-height: 100vh;
     @include centerEl;
 }
 
-.hotel-page{
+.container-search, .hotel-page, .container-likes{
     display: grid;
     grid-template-rows: 8rem 1fr auto;
     min-height: 100vh;

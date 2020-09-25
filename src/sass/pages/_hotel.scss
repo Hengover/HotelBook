@@ -4,82 +4,14 @@
     grid-template-columns: minmax(min-content, 28rem) 1fr;
 }
 
-.aside{
-    display: grid;
-    grid-template-columns: minmax(min-content, 1fr);
-    grid-template-rows: repeat(3, max-content);
-    grid-row-gap: 1rem;
-    padding: 1rem;
-
-    &__rating-reviews{
-        
-    }
-
-    &__rating-heading{
-        margin-bottom: .7rem;
-
-    }
-
-    &__reviews{
-        border-top: .1rem solid $color-grey-1;
-    }
-
-    &__reviews-user{
-        margin-top: 1.5rem;
-    }
-
-    &__reviews-user-box{
-        border-bottom: .1rem solid $color-grey-1;
-        &:not(:last-child){
-            margin-bottom: 1rem;
-        }
-    }
-
-    &__reviews-user-text{
-        font-size: 1.4rem;
-        font-weight: 400;
-        margin-bottom: .8rem;
-    }
-
-    &__reviews-user-details{
-        display: flex;
-        padding-bottom: 1rem;
-    }
-
-    &__reviews-figure{
-        width: 3.5rem;
-        height: 3.5rem;
-        margin-right: .5rem;
-    }
-
-    &__reviews-user-image{
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-    }
-
-    &__reviews-user-box-name{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    &__reviews-name{
-        font-size: 1.5rem;
-        font-weight: 600;
-    }
-
-    &__reviews-time{
-        font-size: 1.2rem;
-    }
-}
-
 .section-details{
-    display: grid;
+    grid-column: center-start / center-end;
+    margin: 5rem 0;
+    display: none;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, max-content);
-    grid-row-gap: 1.5rem;
-    padding: 1rem;
+    grid-template-rows: max-content;
+    grid-row-gap: 3rem;
+    position: relative;
     
     &__name-box{
         display: grid;
@@ -178,14 +110,20 @@
         flex-direction: column;
     }
 
+    &__btn-svg{
+        background-color: $color-white;
+        border: none;
+        cursor: pointer;
+    }
+
     &__sale{
         font-size: 2rem;
         font-weight: 600;
     }
 
     &__figure{
-        width: 84rem;
-        height: 40rem;
+        width: 100%;
+        height: 52rem;
     }
 
     &__img{
@@ -196,6 +134,7 @@
 
     &__description-hotel{
         font-size: 1.4rem;
+        font-weight: 400;
     }
 
     &__amenities-heading{
@@ -224,5 +163,58 @@
         height: 2rem;
         fill: $color-green;
         margin-right: .5rem;
+    }
+
+    &__reviews-box{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem , 1fr));
+        grid-column-gap: 4rem;
+        grid-row-gap: 3rem;
+        justify-items: start;
+        align-items: start;
+    }
+
+    &__review{
+
+    }
+
+    &__review-user-desc{
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    &__review-figure{
+        min-width: 5rem;
+        min-height: 5rem;
+        width: 5rem;
+        height: 5rem;
+        margin-right: 1rem;
+    }
+
+    &__review-img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    &__review-user-name-date{
+        font-size: 1.4rem;
+    }
+
+    &__review-text{
+        font-size: 1.6rem;
+    }
+
+    &__btn-close{
+        position: absolute;
+        top: 0;
+        right: -6%;
+    }
+
+    &__svg-close{
+        width: 3rem;
+        height: 3rem;
+        fill: $color-red;
     }
 }

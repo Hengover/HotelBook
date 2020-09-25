@@ -41,15 +41,8 @@ module.exports = {
             }
         }),
         new HtmlWebpackPlugin({ //Receive html file from src folder to dist folder when bundle.js reload
-            filename: 'search.html',
-            template: './search.html', //Starting html file
-            minify: {
-                collapseWhitespace: isProd
-            }
-        }),
-        new HtmlWebpackPlugin({ //Receive html file from src folder to dist folder when bundle.js reload
-            filename: 'hotel.html',
-            template: './hotel.html', //Starting html file
+            filename: 'like.html',
+            template: './like.html', //Starting html file
             minify: {
                 collapseWhitespace: isProd
             }

@@ -14,8 +14,8 @@ export default class Search {
             const res = await axios(`https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=30&sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=${this.queryPlace}`, {
                 "method": "GET",
 	            "headers": {
-		            "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-		            "x-rapidapi-key": "09a11062damsh072d6ddbcb1b862p1986e7jsn5a0c7c8037db"
+                    "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+                    "x-rapidapi-key": "ce71953e95msheace372770fab61p1a592ejsn8abc30a2e1a5"
                 }
             })
             console.log(res);
@@ -32,11 +32,10 @@ export default class Search {
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-                    "x-rapidapi-key": "09a11062damsh072d6ddbcb1b862p1986e7jsn5a0c7c8037db"
+                    "x-rapidapi-key": "ce71953e95msheace372770fab61p1a592ejsn8abc30a2e1a5"
                 }
             })
             this.hotelList = res.data.data;
-            
             //Restore hotelList
             this.persistData();
             console.log(this.hotelList);
@@ -51,13 +50,13 @@ export default class Search {
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-                    "x-rapidapi-key": "09a11062damsh072d6ddbcb1b862p1986e7jsn5a0c7c8037db"
+                    "x-rapidapi-key": "ce71953e95msheace372770fab61p1a592ejsn8abc30a2e1a5"
                 }
             })
-            this.hotelList = res.data.data;
+            this.hotelListFilter = res.data.data;
             //Restore hotelList
             //this.persistData();
-            console.log(this.hotelList);
+            console.log(this.hotelListFilter);
         } catch(error) {
             alert(error);
         }
