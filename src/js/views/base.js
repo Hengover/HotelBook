@@ -14,7 +14,7 @@ export const elements = {
     formSpecifyCheckbox: document.querySelector('.form-specify__checkbox'),
     hotelPage: document.querySelector('.hotel-page'),
     asideSearch: document.querySelector('.filters'),
-    cardBox: document.querySelector('.card-box'),
+    cardBox: document.querySelector('.section-favorites'),
     likePage: document.querySelector('.container-likes'),
 
     searchHotelsCards: document.querySelector('.search-list__card'),
@@ -24,7 +24,11 @@ export const elements = {
     mainContent: document.querySelector('.main-content'),
     hotelDetails: document.querySelector('.section-details'),
     asideSearch: document.querySelector('.filters'),
-    btnClose : document.querySelector('.section-details__btn-close')
+    btnClose : document.querySelector('.section-details__btn-close'),
+    btnFavorites: document.querySelector('.header__favorites'), 
+    favoritesSection: document.querySelector('.section-favorites'),
+    favoritesCardBox: document.querySelector('.section-favorites__cards-box'),
+    btnCloseFav: document.querySelector('.section-favorites__btn-close')
 }
 
 export const elementString = {

@@ -165,6 +165,16 @@
         margin-right: .5rem;
     }
 
+    &__reviews-score{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__reviews-number{
+        margin-left: 1rem;
+    }
+
     &__reviews-box{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(25rem , 1fr));
@@ -204,17 +214,5 @@
 
     &__review-text{
         font-size: 1.6rem;
-    }
-
-    &__btn-close{
-        position: absolute;
-        top: 0;
-        right: -6%;
-    }
-
-    &__svg-close{
-        width: 3rem;
-        height: 3rem;
-        fill: $color-red;
     }
 }

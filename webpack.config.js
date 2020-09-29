@@ -40,13 +40,6 @@ module.exports = {
                 collapseWhitespace: isProd
             }
         }),
-        new HtmlWebpackPlugin({ //Receive html file from src folder to dist folder when bundle.js reload
-            filename: 'like.html',
-            template: './like.html', //Starting html file
-            minify: {
-                collapseWhitespace: isProd
-            }
-        }),
         new MiniCssExtractPlugin({ //Seperate css file from js file
             filename: './css/style.css'
         }),

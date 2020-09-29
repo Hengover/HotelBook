@@ -36,8 +36,6 @@ export default class Search {
                 }
             })
             this.hotelList = res.data.data;
-            //Restore hotelList
-            this.persistData();
             console.log(this.hotelList);
         } catch(error) {
             alert(error);
@@ -54,26 +52,10 @@ export default class Search {
                 }
             })
             this.hotelListFilter = res.data.data;
-            //Restore hotelList
-            //this.persistData();
             console.log(this.hotelListFilter);
         } catch(error) {
             alert(error);
         }
-    }
-
-    persistData() {
-        localStorage.setItem('hotelList', JSON.stringify(this.hotelList)); //It's always be a string.c JSON.stringify-convert arrays ot a string
-        localStorage.setItem('locationId', JSON.stringify(this.locationId));
-    }
-
-    readStorage() {
-        const storage = JSON.parse(localStorage.getItem('hotelList'));
-        const storageLocId = JSON.parse(localStorage.getItem('locationId'));
-
-        //Restore likes from the localStorage
-        if (storage) this.hotelList = storage; //if storage variable undefined or null
-        if (storageLocId) this.locationId = storageLocId; //if storage variable undefined or null
     }
 }
 

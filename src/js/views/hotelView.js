@@ -36,6 +36,7 @@ const renderReviews = reviews => {
 export const openHotel = () => {
     elements.hotelDetails.innerHTML = '';
     elements.sectionList.style.display = 'none';
+    elements.favoritesSection.style.display = 'none';
     elements.hotelDetails.style.display = 'grid';
 }
 
@@ -44,7 +45,7 @@ export const openSearchList = () => {
     elements.hotelDetails.style.display = 'none';
 }
 
-export const renderHotel = hotel => {
+export const renderHotel = (hotel, isLiked) => {
     const markup = `
         <div class="section-details__name-box">
             <div class="section-details__desc-box">
@@ -57,7 +58,7 @@ export const renderHotel = hotel => {
                         </svg>
                         <button class="section-details__btn-svg">
                             <svg class="section-details__svg-class section-details__svg-class--likes">
-                                <use xlink:href="./img/sprite.svg#icon-heart-outlined"></use>
+                                <use xlink:href="./img/sprite.svg#icon-heart${isLiked ? '' : '-outlined'}"></use>
                             </svg>
                         </button>
                     </div>
@@ -93,14 +94,18 @@ export const renderHotel = hotel => {
                 <ul class="section-details__amenities-list">${renderAmenities(hotel.amenities, 10, 20)}</ul>
                 <ul class="section-details__amenities-list">${renderAmenities(hotel.amenities, 20, 30)}</ul>
             </div>
-            <h3 class="heading-tertiary section-details__amenities-heading">Reviews</h3>
+            <div class="section-details__reviews-score">
+                <h3 class="heading-tertiary section-details__amenities-heading">Guest Reviews</h3>
+                <span class="section-details__reviews-number number-rating">${hotel.rating}</span>
+            </div>
+            
             <div class="section-details__reviews-box">
                 ${renderReviews(hotel.room_tips)}
             </div>
-            <button class="section-details__btn-svg section-details__btn-close">
-                    <svg class="section-details__svg-close">
-                        <use xlink:href="./img/sprite.svg#icon-close"></use>
-                    </svg>
+            <button class="btn-close section-details__btn-close">
+                <svg class="svg-close">
+                    <use xlink:href="./img/sprite.svg#icon-close"></use>
+                </svg>
             </button>
     `;
     elements.hotelDetails.insertAdjacentHTML('afterbegin', markup);

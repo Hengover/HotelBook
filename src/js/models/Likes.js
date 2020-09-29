@@ -1,10 +1,12 @@
+import uniqid from 'uniqid';
+
 export default class Likes{
     constructor() {
         this.likes = [];
     }
 
     addLike(id, img, name, address, rating, price){
-        const like = {id, img, name, address, rating, price};
+        const like = {dataId: uniqid(), id, img, name, address, rating, price};
         this.likes.push(like);
         this.persistData();
         return like;
@@ -12,12 +14,12 @@ export default class Likes{
 
     deleteLike(id){
         const index = this.likes.findIndex(el => el.id === id);
-        this.persistData();
         this.likes.splice(index, 1);
+        this.persistData();
     }
 
     isLiked(id) {
-        return this.likes.findIndex(el => el.id === id) !== -1;
+        return this.likes.findIndex(el => el.id === id) !== -1; 
     }
 
     persistData() {
@@ -29,7 +31,5 @@ export default class Likes{
 
         //Restore likes from the localStorage
         if (storage) this.likes = storage;
-
-        return this.likes;
     }
 }

@@ -49,3 +49,12 @@
         background-color: $color-blue;
     }
 }
+
+.btn-close{
+    background-color: $color-white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: -6%;
+}

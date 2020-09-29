@@ -5,15 +5,61 @@
     display: grid;
     @include centerEl;
 
-    &__logo-box{
-        grid-column: center-start / center-end;
 
+    &__nav{
+        grid-column: center-start / center-end;
         display: flex;
+        justify-content: space-between;
         align-items: center;
+    }
+
+    &__logo-box{
     }
 
     &__logo-img{
         width: 14rem;
         height: auto;
+    }
+
+    &__list{
+        display: flex;
+        align-self: stretch;
+        align-items: center;
+    }
+
+    &__item{
+        height: 100%;
+        padding: 0 2rem;
+        list-style: none;
+        color: $color-white;
+        font-size: 1.5rem;
+        font-weight: 400;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+
+        &:hover{
+            background-color: $color-white;
+            color: $color-blue;
+        }
+
+        span{
+            margin-left: .7rem;
+        }
+    }
+
+    &__svg{
+        fill: currentColor;
+
+        &--likes{
+            width: 2rem;
+            height: 2rem;
+        }
+
+        &--user{
+            width: 1.5rem;
+            height: 1.5rem;
+        }
     }
 }

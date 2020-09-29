@@ -1,9 +1,7 @@
 //Global app controller
-
 //Css and sass
 import '../css/style.css';
 import '../sass/main.scss';
-
 //JS
 import Search from './models/Search';
 import Hotel from './models/Hotel';
@@ -36,16 +34,6 @@ const controlSearch = async () => {
                 searchView.openAsideFilter();
                 searchView.renderResults(state.search.hotelList, searchView.rows, searchView.currentPage);
                 searchView.renderButtons(state.search.hotelList, elements.searchPaginationBox, searchView.rows);
-                /*
-                if(elements.searchPage){
-                    searchView.clearResult();
-                    searchView.clearPaginationBox();
-                    searchView.renderResults(state.search.hotelList, searchView.rows, searchView.currentPage);
-                    searchView.renderButtons(state.search.hotelList, elements.searchPaginationBox, searchView.rows);
-                } else {
-                    searchView.redirect();
-                }
-                */
             } catch(error){
                 alert(error);
             }
@@ -99,7 +87,10 @@ const targetHotel = async () => {
             renderLoader(elements.mainContent);
             await state.hotel.getHotelDetails();
             clearLoader(elements.mainContent);
-            hotelView.renderHotel(state.hotel.hotel)
+            hotelView.renderHotel(
+                state.hotel.hotel, 
+                state.likes.isLiked(id)
+            );
         } catch(error) {
             alert(error);
         }
@@ -113,126 +104,93 @@ elements.sectionList.addEventListener('click', e => {
     }  
 });
 
+elements.favoritesSection.addEventListener('click', e => {
+    const btn = e.target.closest('.card__btn'); //Return closest element
+    if(btn){
+        ['hashchange', 'load'].forEach(event => window.addEventListener(event, targetHotel));
+    }  
+});
+
 elements.hotelDetails.addEventListener('click', e => {
     if(e.target.matches('.section-details__btn-close, .section-details__btn-close *')) {
         hotelView.openSearchList();
     }
 })
 
-
-
-
-/*
-//Search filter
-let stringClass;
-const searchFilter = async () => {
-    const queryPlace = state.search.locationId;
-    const hotelClass = stringClass;
-        if(hotelClass) {
-            try {
-                await state.search.getHotelFiltersList(queryPlace, hotelClass);
-                //Clear hotel and pagination box
-                searchView.clearResult();
-                searchView.clearPaginationBox();
-                //Render and Pagination
-                searchView.renderResultsClass(state.search.hotelList, searchView.rows, searchView.currentPage);
-                searchView.renderButtonsClass(state.search.hotelList, elements.searchPaginationBox, searchView.rows);
-            } catch(error){
-                alert(error);
-            }
-        }
-}  
-
-//Restore and render hotelsList on search page load and Pagination
-window.addEventListener('load', () => {
-    //Search page
-    if(elements.searchPage) {
-        state.search = new Search();
-        state.search.readStorage();
-        //Render and Pagination
-        searchView.renderResults(state.search.hotelList, searchView.rows, searchView.currentPage);
-        searchView.renderButtons(state.search.hotelList, elements.searchPaginationBox, searchView.rows);
-        //Search filter
-        elements.formSpecifyCheckboxAll.forEach(el => {
-            el.addEventListener('change', () => {
-                if(el.checked){
-                    stringClass = el.value;
-                    searchFilter();
-                }
-            });
-        });
-
-        elements.searchFormSmall.addEventListener('submit', e => {
-            e.preventDefault();
-            controlSearch();
-        });
-
-        elements.searchHotelsBox.addEventListener('click', e => {
-            const btn = e.target.closest('.search-list__btn'); //Return closest element
-            if(btn){
-                ['hashchange', 'load'].forEach(event => window.addEventListener(event, targetHotel));
-            }  
-        });
-    //Hotel page
-    } else if(elements.hotelPage) {
-        state.hotel = new Hotel();
-        const hotelDetails = state.hotel.readStorage();
-        hotelView.renderReiew(hotelDetails);
-        hotelView.renderHotel(hotelDetails);
-
-        //Like button
-        elements.hotelDetails.addEventListener('click', e => {
-            const btn = e.target.closest('.section-details__btn-like');
-            if(btn){
-                window.location = '../like.html';
-            }
-        })
-        //Like page
-    } else if(elements.likePage) {
-        controlLike();
-    }
-});
-
-//Hotel view
-const targetHotel = async () => {
-    const id = window.location.hash.replace('#', ''); //Return entire url( in this case - hash symbole - id)
-    if(id){
-        state.hotel = new Hotel(id);
-        try {
-            await state.hotel.getHotelDetails();
-            hotelView.redirect();
-            
-        } catch(error) {
-            alert(error);
-        }
-    }
-}
-
+/**
+ * Like controller
+ */
 const controlLike = () => {
     if(!state.likes) state.likes = new Likes();
-    state.hotel = new Hotel();
-    const currentId = state.hotel.readStorageId();
-    const dataLike = state.hotel.readStorageLikesData();
-
-    console.log(currentId, dataLike);
+    const currentId = state.hotel.id;
+    console.log(currentId);
 
     //User has not yet liked current recipe
     
     if(!state.likes.isLiked(currentId)){
         const newLike = state.likes.addLike(
             currentId,
-            dataLike.img,
-            dataLike.name,
-            dataLike.address,
-            dataLike.rating,
-            dataLike.price
-        )
+            state.hotel.img,
+            state.hotel.name,
+            state.hotel.address,
+            state.hotel.rating,
+            state.hotel.price,
+        );
 
+        //Toggle the like button
+        likesView.toggleLikeBtn(true);
+
+        //Add items on UI
         likesView.renderLikeHotel(newLike);
-        //User has liked current recipe
         
+    //User has liked current recipe
     } else {
+        //Delte item from the object
         state.likes.deleteLike(currentId);
+
+        //Toggle the like button
+        likesView.toggleLikeBtn(false);
+
+        //Delete item on UI
+        likesView.deleteLike(currentId);
     }
 }
-*/
+
+elements.btnFavorites.addEventListener('click', () => {
+    likesView.openFavoritesSection();
+})
+
+elements.btnCloseFav.addEventListener('click', () => {
+    likesView.closeFavoritesSection();
+})
+
+elements.hotelDetails.addEventListener('click', e => {
+    if(e.target.matches('.section-details__btn-svg, .section-details__btn-svg *')) {
+        controlLike();
+    }
+});
+
+elements.favoritesSection.addEventListener('click', e => {
+    if(e.target.matches('.card__btn-close, .card__btn-close *')) {
+        const id = e.target.closest('.card').dataset.itemid;
+        console.log(id)
+        
+        state.likes.deleteLike(id);
+        console.log(state.likes);
+        //Delete item on UI
+        likesView.deleteLikeBtnClose(id);
+    }  
+});
+
+//Restore liked hotels
+window.addEventListener('load', () => {
+    //Likes
+    state.likes = new Likes();
+
+    //Restore likes
+    state.likes.readStorage();
+
+    //Render the existing likes
+    state.likes.likes.forEach(el => likesView.renderLikeHotel(el));
+
+})

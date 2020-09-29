@@ -30,3 +30,9 @@ body {
     min-height: 100vh;
     @include centerEl;
 }
+
+.svg-close{
+    width: 3rem;
+    height: 3rem;
+    fill: $color-red;
+}

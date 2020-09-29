@@ -1,8 +1,0 @@
-.likes-details{
-    grid-column: center-start / center-end;
-
-    &__cards-box{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    }
-}

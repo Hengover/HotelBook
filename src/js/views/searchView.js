@@ -32,6 +32,7 @@ export const openSearch = () => {
     elements.hotelDetails.style.display = 'none';
     elements.searchHotelsBox.innerHTML = '';
     elements.asideSearch.style.display = 'none';
+    elements.favoritesSection.style.display = 'none';
 }
 
 export const openAsideFilter = () => {

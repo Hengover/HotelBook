@@ -305,13 +305,16 @@ template {
   display: none; }
 
 .loader {
-  margin: 5rem auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center; }
   .loader svg {
-    height: 5.5rem;
-    width: 5.5rem;
+    height: 10rem;
+    width: 10rem;
     fill: #4c9ded;
-    transform-origin: 44% 50%;
+    transform-origin: 50% 50%;
     animation: rotate 1.5s infinite linear; }
 
 @keyframes rotate {
@@ -347,6 +350,11 @@ body {
   grid-template-rows: 8rem 1fr auto;
   min-height: 100vh;
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+
+.svg-close {
+  width: 3rem;
+  height: 3rem;
+  fill: #d32f2f; }
 
 .heading-primary {
   font-size: 3rem;
@@ -409,11 +417,23 @@ body {
 .btn-link:hover {
   background-color: #003580; }
 
-.card-box {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 35rem));
-  grid-gap: 6rem;
-  margin-bottom: 10rem; }
+.btn-close {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: -6%; }
+
+.section-favorites {
+  grid-column: center-start / center-end;
+  display: none;
+  margin: 5rem 0;
+  position: relative; }
+  .section-favorites__cards-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 30rem));
+    grid-gap: 6rem; }
 
 .card {
   background-color: #f5f5f5;
@@ -421,11 +441,13 @@ body {
   border: 0.1rem solid #dbdbdd;
   display: grid;
   grid-template-columns: 1fr;
+  align-items: start;
   position: relative; }
   .card > * {
     grid-column: 1 / -1; }
   .card__img {
-    width: 100%; }
+    width: 100%;
+    height: 21rem; }
   .card__details > * {
     border-bottom: 0.1rem solid #dbdbdd;
     padding: 1rem; }
@@ -461,7 +483,8 @@ body {
     margin: 1rem;
     text-align: center; }
   .card__btn-close {
-    background-color: none;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
     position: absolute;
     top: 2%;
@@ -608,13 +631,41 @@ body {
   background-color: #003580;
   display: grid;
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
-  .header__logo-box {
+  .header__nav {
     grid-column: center-start / center-end;
     display: flex;
+    justify-content: space-between;
     align-items: center; }
   .header__logo-img {
     width: 14rem;
     height: auto; }
+  .header__list {
+    display: flex;
+    align-self: stretch;
+    align-items: center; }
+  .header__item {
+    height: 100%;
+    padding: 0 2rem;
+    list-style: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center; }
+    .header__item:hover {
+      background-color: #fff;
+      color: #003580; }
+    .header__item span {
+      margin-left: .7rem; }
+  .header__svg {
+    fill: currentColor; }
+    .header__svg--likes {
+      width: 2rem;
+      height: 2rem; }
+    .header__svg--user {
+      width: 1.5rem;
+      height: 1.5rem; }
 
 .offer {
   grid-column: center-start / center-end;
@@ -735,6 +786,12 @@ body {
     height: 2rem;
     fill: #77dd77;
     margin-right: .5rem; }
+  .section-details__reviews-score {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .section-details__reviews-number {
+    margin-left: 1rem; }
   .section-details__reviews-box {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -760,20 +817,6 @@ body {
     font-size: 1.4rem; }
   .section-details__review-text {
     font-size: 1.6rem; }
-  .section-details__btn-close {
-    position: absolute;
-    top: 0;
-    right: -6%; }
-  .section-details__svg-close {
-    width: 3rem;
-    height: 3rem;
-    fill: #d32f2f; }
-
-.likes-details {
-  grid-column: center-start / center-end; }
-  .likes-details__cards-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); }
 
 .search-main {
   grid-column: center-start / center-end;

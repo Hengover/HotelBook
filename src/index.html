@@ -8,9 +8,26 @@
 </head>
 <body class="container">
     <header class="header">
-        <div class="header__logo-box">
-            <img src="./img/logo.png" alt="header" class="header__logo-img"> <!--"./img/logo.png"-->
-        </div>
+        <nav class="header__nav">
+            <div class="header__logo-box">
+                <img src="./img/logo.png" alt="header" class="header__logo-img"> <!--"./img/logo.png"-->
+            </div>
+            <ul class="header__list">
+                <li class="header__item header__favorites">
+                    <svg class="header__svg header__svg--likes">
+                        <use xlink:href="./img/sprite.svg#icon-heart"></use>
+                    </svg>
+                    <span>Favorites</span>
+                </li>
+                <li class="header__item">Create account</li>
+                <li class="header__item">
+                    <svg class="header__svg header__svg--user">
+                        <use xlink:href="./img/sprite.svg#icon-user"></use>
+                    </svg>
+                    <span>Sign in</span>
+                </li>
+            </ul>
+        </nav>
     </header>
     
     <section class="search">
@@ -261,7 +278,41 @@
                     </svg>
                 </button>
                   -->
-            </section>
+        </section>
+
+        <section class="section-favorites">
+            <button class="btn-close section-favorites__btn-close">
+                <svg class="svg-close">
+                    <use xlink:href="./img/sprite.svg#icon-close"></use>
+                </svg>
+            </button>
+            <div class="section-favorites__cards-box">
+                <!--
+                <div class="card">
+                    <img src="./img/Apartments.jpg" alt="Image hotel" class="card__img">
+                    <div class="card__details">
+                        <h4 class="heading-fourth card__heading ">The Hoxton, Downtown LA</h4>
+                        <div class="card__adress-box">
+                            <svg class="card__svg card__svg--address">
+                                <use xlink:href="./img/sprite.svg#icon-globe"></use>
+                            </svg>
+                            <address class="card__address">300 S Doheny Dr, Los Angeles, CA 90048-3704</address>
+                        </div>
+                        <div class="card__rating-sale-box">
+                            <span class="number-rating card__rating">7.5</span>
+                            <span class="card__sale">$513 - $993</span>
+                        </div>
+                    </div>
+                    <a class="btn card__btn" href="#">View the details</a>
+                    <button class="card__btn-close">
+                        <svg class="card__svg card__svg--close">
+                            <use xlink:href="./img/sprite.svg#icon-close-solid"></use>
+                        </svg>
+                    </button>
+                </div>
+                -->
+            </div>
+        </section>
 
         <section class="offer">
             <h2 class="heading-secondary">We offer you a choise...</h2>
