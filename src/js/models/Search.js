@@ -37,6 +37,7 @@ export default class Search {
             })
             this.hotelList = res.data.data;
             console.log(this.hotelList);
+            console.log(res);
         } catch(error) {
             alert(error);
         }

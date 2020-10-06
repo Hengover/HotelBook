@@ -32,12 +32,86 @@
     
     <section class="search">
         <div class="search__box">
-            <form class="search__form" action="./search.html">
-                <input class="search__field search__field--place" type="text" placeholder="Where to?">
+            <h1 class="heading-primary search__heading">Find hotels, homes, and much more...</h1>
+            <form class="search__form">
+                <div class="search__autocomplete">
+                    <input class="search__field search__field--place" type="text" id="myInput" placeholder="Where to?">
+                </div>
                 <input class="search__field search__field--checkin" type="date" placeholder="Check in">
-                <input class="search__field search__field--adults" type="number" min="0" max="100" placeholder="Adults">
-                <input class="search__field search__field--rooms" type="number" min="0" max="100" placeholder="Rooms">
-                <input class="search__field search__field--night" type="number" min="0" max="100" placeholder="Night">
+                <div class="search__field-guests-box">
+                    <label class="search__label">
+                        <div class="search__svg-box">
+                            <svg class="search__svg-user">
+                            <use xlink:href="./img/sprite.svg#icon-user"></use>
+                        </svg>
+                        </div>
+                        <span class="search__guest search__adult-count">1 adult</span>
+                        <span class="search__guest">
+                            &nbsp;·&nbsp;
+                            <span class="search__room-count">1 room</span>
+                        </span>
+                        <span class="search__guest">
+                            &nbsp;·&nbsp;
+                            <span class="search__night-count">1 night</span>
+                        </span>
+                    </label>
+                    <div class="search__popup-box" style="display: none;">
+                        <div class="search__popup-update-box">
+                            <span class="search__popup-name">Adults</span>
+                            <div class="search__popup-input-box">
+                                <button class="search__popup-btn search__popup-btn-adults--decrease search__popup-btn--decrease">
+                                    <svg class="search__btn-svg search__btn-decrease-svg search__btn-decrease-svg--adults">
+                                        <use xlink:href="./img/sprite.svg#icon-minus"></use>
+                                    </svg>
+                                </button>
+                                <div class="search__popup-value">
+                                    <span class="search__popup-count search__popup-count--adults">1</span>
+                                </div>
+                                <button class="search__popup-btn search__popup-btn-adults--increase">
+                                    <svg class="search__btn-svg">
+                                        <use xlink:href="./img/sprite.svg#icon-plus"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="search__popup-update-box">
+                            <span class="search__popup-name">Rooms</span>
+                            <div class="search__popup-input-box">
+                                <button class="search__popup-btn search__popup-btn-rooms--decrease search__popup-btn--decrease">
+                                    <svg class="search__btn-svg search__btn-decrease-svg search__btn-decrease-svg--rooms">
+                                        <use xlink:href="./img/sprite.svg#icon-minus"></use>
+                                    </svg>
+                                </button>
+                                <div class="search__popup-value">
+                                    <span class="search__popup-count search__popup-count--rooms">1</span>
+                                </div>
+                                <button class="search__popup-btn search__popup-btn-rooms--increase">
+                                    <svg class="search__btn-svg">
+                                        <use xlink:href="./img/sprite.svg#icon-plus"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="search__popup-update-box">
+                            <span class="search__popup-name">Night</span>
+                            <div class="search__popup-input-box">
+                                <button class="search__popup-btn search__popup-btn-nights--decrease search__popup-btn--decrease">
+                                    <svg class="search__btn-svg search__btn-decrease-svg search__btn-decrease-svg--nights">
+                                        <use xlink:href="./img/sprite.svg#icon-minus"></use>
+                                    </svg>
+                                </button>
+                                <div class="search__popup-value">
+                                    <span class="search__popup-count search__popup-count--nights">1</span>
+                                </div>
+                                <button class="search__popup-btn search__popup-btn-nights--increase">
+                                    <svg class="search__btn-svg">
+                                        <use xlink:href="./img/sprite.svg#icon-plus"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <button class="search__btn">
                     <svg class="search__svg">
                         <use xlink:href="./img/sprite.svg#icon-search"></use>

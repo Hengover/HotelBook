@@ -28,7 +28,27 @@ export const elements = {
     btnFavorites: document.querySelector('.header__favorites'), 
     favoritesSection: document.querySelector('.section-favorites'),
     favoritesCardBox: document.querySelector('.section-favorites__cards-box'),
-    btnCloseFav: document.querySelector('.section-favorites__btn-close')
+    btnCloseFav: document.querySelector('.section-favorites__btn-close'),
+    labelUpdate: document.querySelector('.search__label'),
+    popupUpdate: document.querySelector('.search__popup-box'),
+    btnAdultsDecrease: document.querySelector('.search__popup-btn-adults--decrease'),
+    btnAdultsIncrease: document.querySelector('.search__popup-btn-adults--increase'), 
+    btnRoomsDecrease: document.querySelector('.search__popup-btn-rooms--decrease'),
+    btnRoomsIncrease: document.querySelector('.search__popup-btn-rooms--increase'), 
+    btnNightsDecrease: document.querySelector('.search__popup-btn-nights--decrease'),
+    btnNightsIncrease: document.querySelector('.search__popup-btn-nights--increase'),
+    btnSvgAdults: document.querySelector('.search__btn-decrease-svg--adults'),
+    btnSvgRooms: document.querySelector('.search__btn-decrease-svg--rooms'),
+    btnSvgNights: document.querySelector('.search__btn-decrease-svg--nights'),
+    valueUpdate: document.querySelector('.search__popup-input'), 
+    valueUpdateBox: document.querySelector('.search__popup-input-box'),
+    labelPopup: document.querySelector('.search__popup-label'),
+    countInputAdults: document.querySelector('.search__popup-count--adults'),
+    countInputRooms: document.querySelector('.search__popup-count--rooms'),
+    countInputNights: document.querySelector('.search__popup-count--nights'),
+    guest: document.querySelector('.search__adult-count'),
+    night: document.querySelector('.search__night-count'),
+    room: document.querySelector('.search__room-count')
 }
 
 export const elementString = {

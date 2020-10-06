@@ -9,60 +9,211 @@
         margin: 5rem 0;
     }
 
+    &__heading{
+        text-align: center;
+        line-height: 0;
+        margin-bottom: 4rem;
+    }
+
     &__form{
         display: grid; 
-        grid-template-columns: minmax(min-content, 35rem) minmax(min-content, 15rem) repeat(3, 7.3rem) minmax(min-content,max-content);  
-        grid-template-rows: 5rem;
+        grid-template-columns: minmax(min-content, 38rem) minmax(min-content, 15rem) minmax(min-content, 25rem) minmax(min-content, max-content);  
         justify-content: center;
 
         &>*{
-            outline: .2rem solid $color-green;
+            outline: .3rem solid $color-green;
             border: none;
+            font-size: 1.4rem;
+            font-family: inherit;
+            font-weight: 500;
         }
+    }
+
+    &__autocomplete{
+        position: relative;
+    }
+
+    &__autocomplete-items{
+        position: absolute;
+        border: 1px solid $color-grey-1;
+        z-index: 99;
+        width: 100%;
+        top: 105%;
+        left: 0;
+
+        div{
+            font-weight: 400;
+            padding: 10px;
+            cursor: pointer;
+            background-color: $color-white;
+            border-bottom: 1px solid $color-grey-1;
+
+            &:hover{
+                background-color: #e9e9e9;
+            }
+        }
+    }
+
+    &__autocomplete-active {
+        /*when navigating through the items using the arrow keys:*/
+        background-color: $color-grey !important;
     }
 
     &__field{
         padding-left: 1rem;
-        font-size: 1.4rem;
-        font-family: inherit;
+
+        &:active,
+        &:focus{
+            box-shadow: 0 0 0 .03rem $color-dark inset;
+        }
+
+        &:hover{
+            box-shadow: 0 0 0 .03rem $color-dark inset;
+        }
 
         &--place{
-
+            width: 100%;
+            height: 100%;
+            border: none;
+            font-weight: 500;
+            outline: none;
         }
 
         &--checkin{
-
-
+            cursor: pointer;
         }
-
-        &--adults{
-
-        }
-
-        &--rooms{
-
-        }
-
-        &--night{
-
-        }
-
     }
 
-    &__btn{
-        padding: 1.3rem 2rem;
-        background-color: $color-blue-light;
-        color: $color-white;
-        font-size: 1.6rem;
-        cursor: pointer;
+    &__field-guests-box{
+        background-color: $color-white;
+        position: relative;
 
+        &:hover{
+            box-shadow: 0 0 0 .03rem $color-dark inset;
+        }
+    }
+
+    &__label{
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    &__svg-box{
+        line-height: 1;
+    }
+
+    &__svg-user{
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 1.2rem;
+        fill: #999999;
+    }
+
+    &__popup-box{
+        width: 135%;
+        position: absolute;
+        top: 115%;
+        right: 0;
+        z-index: 999;
+        background-color: $color-white;
+        border-radius: .3rem;
+        box-shadow: 0 2rem 16rem rgba($color-dark, .15);
+        padding: 2rem;
+    }
+
+    &__popup-update-box{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:not(:last-child){
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__popup-name{
+        font-size: 1.4rem;
+    }
+
+    &__popup-input-box{
+        display: flex;
+        align-items: center;
+    }
+
+    &__popup-btn{
+        &,
+        &:visited,
+        &:link{
+            background-color: $color-white;
+            border: .1rem solid $color-blue-light;
+            width: 3.7rem;
+            height: 3.7rem;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        &:active,
+        &:focus{
+            background-color: $color-azure;
+            outline: .1rem solid $color-blue-light;
+        }
+
+        &:hover{
+            background-color: $color-azure;
+        }
+    }
+
+    &__popup-btn--decrease {
+        cursor: not-allowed;
+        border: .1rem solid $color-grey-1;
+    }
+
+    &__btn-svg{
+        width: 1.2rem;
+        height: 1.2rem;
+        fill: $color-blue-light;
+    }
+
+    &__btn-decrease-svg {
+        fill: $color-grey-1;
+    }
+
+    &__popup-input{
+        display: none;
+    }
+
+    &__popup-count{
+        display: block;
+        text-align: center;
+        min-width: 3.6rem;
+    }
+
+    &__btn{
+        &,
+        &:visited,
+        &:link{
+            padding: 1.3rem 2rem;
+            background-color: $color-blue-light;
+            color: $color-white;
+            font-size: 1.6rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         &:hover{
             background-color: $color-blue-dark;
             transition: all .2s;
+        }
+
+        &:active,
+        &:focus{
+            box-shadow: 0 0 0 .03rem $color-dark inset;
         }
     }
 
@@ -72,68 +223,6 @@
         fill: $color-white;
         line-height: 0;
         margin-right: .7rem;
-    }
-}
-
-.form-small{
-    background-color: $color-gold;
-    padding: 1.3rem;
-    font-family: inherit;
-    border-radius: .3rem;
-
-    &__box-field{
-        display: flex;
-        flex-direction: column;
-
-        &--option{
-            margin-top: 1rem;
-        }
-
-        &:not(:last-child) {
-            margin-bottom: 1.5rem;
-        }
-
-        &:nth-child(3){
-            margin-top: -1rem;
-        }
-    }
-
-    &__label{
-        font-size: 1.3rem;
-        font-weight: 400;
-    }
-
-    &__field{
-        padding: .8rem 1rem;
-        border: none;
-        font-size: 1.4rem;
-        border-radius: .2rem;
-                font-family: inherit;
-
-    }
-
-    &__box-option{
-        display: flex;
-        flex-direction: row;
-    }
-
-    &__select{
-        padding: .8rem 1rem;
-        width: 100%;
-        border: none;
-        font-size: 1.4rem;
-        border-radius: .2rem;
-
-        &:not(:last-child) {
-            margin-right: 1rem;
-        }
-    }
-
-    &__option{}
-
-    &__btn{
-        width: 100%;
-        padding: 1rem 2rem;
     }
 }
 

@@ -28,4 +28,5 @@ export default class Hotel{
             console.log(error);
         }
     }
+
 }

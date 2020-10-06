@@ -14,16 +14,58 @@ import { elements, renderLoader, clearLoader } from './views/base';
 const state = {};
 
 /**Search conroller */
+
+/**
+ * Autocomplete controller 
+*/
+searchView.autocomplete(document.getElementById('myInput'), searchView.countries);
+
+/** 
+* Popup update box controller
+*/
+elements.labelUpdate.addEventListener('click', () => {
+    searchView.openPopupUpdate(elements.popupUpdate);
+});
+
+let adults = '1', rooms = '1', nights = '1';
+
+elements.btnAdultsDecrease.addEventListener('click', e => {
+    e.preventDefault();
+    if(elements.countInputAdults.innerHTML > 1) adults = searchView.updateButton('dec', 'adults');
+})
+
+elements.btnAdultsIncrease.addEventListener('click', e => {
+    e.preventDefault();
+    adults = searchView.updateButton('inc', 'adults');
+})
+
+elements.btnRoomsDecrease.addEventListener('click', e => {
+    e.preventDefault();
+    if(elements.countInputRooms.innerHTML > 1) rooms = searchView.updateButton('dec', 'rooms');  
+})
+
+elements.btnRoomsIncrease.addEventListener('click', e => {
+    e.preventDefault();
+    rooms = searchView.updateButton('inc', 'rooms');
+})
+
+elements.btnNightsDecrease.addEventListener('click', e => {
+    e.preventDefault();
+    if(elements.countInputNights.innerHTML > 1) nights = searchView.updateButton('dec', 'nights');
+})
+
+elements.btnNightsIncrease.addEventListener('click', e => {
+    e.preventDefault();
+    nights = searchView.updateButton('inc', 'nights');
+})
+
 const controlSearch = async () => {
     const queryPlace = searchView.getInputPlace();
-    const adults = searchView.getInputCheckin();
-    const checkin = searchView.getInputAdults();
-    const rooms = searchView.getInputRooms();
-    const night = searchView.getInputNight();
+    const checkin = searchView.getInputCheckin();
         //New search object and add to state
-        if(queryPlace, adults, checkin, rooms, night) {
-            console.log(queryPlace);
-            state.search = new Search(queryPlace, adults, checkin, rooms, night);
+        if(queryPlace, checkin, adults, rooms, nights) {
+            console.log(queryPlace, adults, rooms, nights);
+            state.search = new Search(queryPlace, adults, checkin, rooms, nights);
             try {
                 searchView.openSearch();
                 renderLoader(elements.mainContent);
@@ -43,6 +85,7 @@ const controlSearch = async () => {
 //Search
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault(); //cancels the default event action
+    searchView.closePopupUpdate();
     controlSearch();
 });
 
