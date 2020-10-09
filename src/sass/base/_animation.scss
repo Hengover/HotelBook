@@ -1,9 +1,8 @@
 .loader{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     svg{
         height: 10rem;
@@ -21,4 +20,30 @@
     100% {
       transform: rotate(360deg); 
     }
+}
+
+@keyframes mover {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.movepanelright {
+      animation: mover .4s ease;
+}
+
+@keyframes movel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.movepanelleft {
+      animation: movel .4s ease;
 }

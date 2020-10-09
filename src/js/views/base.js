@@ -13,10 +13,8 @@ export const elements = {
     formSpecifyCheckboxAll: document.querySelectorAll('.form-specify__checkbox'),
     formSpecifyCheckbox: document.querySelector('.form-specify__checkbox'),
     hotelPage: document.querySelector('.hotel-page'),
-    asideSearch: document.querySelector('.filters'),
     cardBox: document.querySelector('.section-favorites'),
     likePage: document.querySelector('.container-likes'),
-
     searchHotelsCards: document.querySelector('.search-list__card'),
     searchHotelsBox: document.querySelector('.search-list__article-box'),
     sectionList: document.querySelector('.search-list'),
@@ -48,7 +46,11 @@ export const elements = {
     countInputNights: document.querySelector('.search__popup-count--nights'),
     guest: document.querySelector('.search__adult-count'),
     night: document.querySelector('.search__night-count'),
-    room: document.querySelector('.search__room-count')
+    room: document.querySelector('.search__room-count'),
+    errorWindow: document.querySelector('.error-popup'),
+    btnErrorWindow: document.querySelector('.error-popup__btn'),
+    btnSlidePanel: document.querySelector('.search-list__btn-slide-panel'),
+    animationPanel: document.querySelector('.movepanel')
 }
 
 export const elementString = {
@@ -63,6 +65,10 @@ export const renderLoader = parent => {
         </svg>
     </div>`;
     parent.insertAdjacentHTML('afterbegin', loader);
+    elements.sectionOffer.style.display = 'none';
+    elements.sectionList.style.display = 'none';
+    elements.favoritesSection.style.display = 'none';
+    elements.hotelDetails.style.display = 'none';
 }
 
 export const clearLoader = () => {

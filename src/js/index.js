@@ -20,6 +20,14 @@ const state = {};
 */
 searchView.autocomplete(document.getElementById('myInput'), searchView.countries);
 
+/**
+* Button error
+*/
+elements.btnErrorWindow.addEventListener('click', e => {
+    e.preventDefault();
+    searchView.btnError();
+})
+
 /** 
 * Popup update box controller
 */
@@ -64,20 +72,19 @@ const controlSearch = async () => {
     const checkin = searchView.getInputCheckin();
         //New search object and add to state
         if(queryPlace, checkin, adults, rooms, nights) {
-            console.log(queryPlace, adults, rooms, nights);
             state.search = new Search(queryPlace, adults, checkin, rooms, nights);
             try {
-                searchView.openSearch();
                 renderLoader(elements.mainContent);
                 searchView.clearPaginationBox();
                 await state.search.getLocationId();
                 await state.search.getHotelList();
                 clearLoader(elements.mainContent);
+                searchView.openSearch();
                 searchView.openAsideFilter();
                 searchView.renderResults(state.search.hotelList, searchView.rows, searchView.currentPage);
                 searchView.renderButtons(state.search.hotelList, elements.searchPaginationBox, searchView.rows);
             } catch(error){
-                alert(error);
+                searchView.openErrorWindow();
             }
         }
 }
@@ -97,19 +104,29 @@ const searchFilter = async () => {
         if(hotelClass) {
             try {
                 //Clear hotel and pagination box
+                searchView.closeAsideFilter();
                 renderLoader(elements.mainContent);
                 searchView.clearResult();
                 searchView.clearPaginationBox();
                 await state.search.getHotelFiltersList(queryPlace, hotelClass);
+                searchView.openAsideFilter();
                 clearLoader(elements.mainContent);
                 //Render and Pagination
                 searchView.renderResultsClass(state.search.hotelListFilter, searchView.rows, searchView.currentPage);
                 searchView.renderButtonsClass(state.search.hotelListFilter, elements.searchPaginationBox, searchView.rows);
             } catch(error){
-                alert(error);
+                searchView.openErrorWindow();
             }
         }
 } 
+
+elements.sectionList.addEventListener('click', e => {
+    if(e.target.closest('.search-list__btn-slide-panel')) {
+        searchView.openSlidePanel();
+    } else if(e.target.closest('.form-specify__btn-close')) {
+        searchView.closeSlidePanel();
+    }
+})
 
 elements.formSpecifyCheckboxAll.forEach(el => {
     el.addEventListener('change', () => {
@@ -126,16 +143,16 @@ const targetHotel = async () => {
     if(id){
         state.hotel = new Hotel(id);
         try {
-            hotelView.openHotel();
             renderLoader(elements.mainContent);
             await state.hotel.getHotelDetails();
             clearLoader(elements.mainContent);
+            hotelView.openHotel();
             hotelView.renderHotel(
                 state.hotel.hotel, 
                 state.likes.isLiked(id)
             );
         } catch(error) {
-            alert(error);
+            searchView.openErrorWindow();
         }
     }
 }
@@ -155,7 +172,7 @@ elements.favoritesSection.addEventListener('click', e => {
 });
 
 elements.hotelDetails.addEventListener('click', e => {
-    if(e.target.matches('.section-details__btn-close, .section-details__btn-close *')) {
+    if(e.target.matches('.hotel-details__btn-close, .hotel-details__btn-close *')) {
         hotelView.openSearchList();
     }
 })
@@ -208,7 +225,7 @@ elements.btnCloseFav.addEventListener('click', () => {
 })
 
 elements.hotelDetails.addEventListener('click', e => {
-    if(e.target.matches('.section-details__btn-svg, .section-details__btn-svg *')) {
+    if(e.target.matches('.hotel-details__btn-svg, .hotel-details__btn-svg *')) {
         controlLike();
     }
 });
@@ -235,5 +252,4 @@ window.addEventListener('load', () => {
 
     //Render the existing likes
     state.likes.likes.forEach(el => likesView.renderLikeHotel(el));
-
 })

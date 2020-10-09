@@ -9,11 +9,13 @@
 
 @import 'components/button';
 @import 'components/card';
+@import 'components/card-search';
+@import 'components/error';
+@import 'components/filters-form';
 @import 'components/form';
+@import 'components/hotel-details';
 
 @import 'layout/footer';
 @import 'layout/header';
 
 @import 'pages/home';
-@import 'pages/hotel';
-@import 'pages/search';

@@ -2,11 +2,6 @@ import { elements } from './base';
 
 export const getInputPlace = () => elements.searchInputPlace.value;
 export const getInputCheckin = () => elements.searchInputCheckin.value; 
-/*
-export const getInputAdults = () => elements.searchInputAdults.value; 
-export const getInputRooms = () => elements.searchInputRooms.value; 
-export const getInputNight = () => elements.searchInputNight.value;  
-*/
 export const getSpecCheckbox = () => elements.formSpecifyCheckbox.value;
 
 const limitDesription = text => {
@@ -52,7 +47,6 @@ export const updateButton = ( type, view ) => {
         updateCountGuest(valueStr, elements.night, 'night');
         lightUpdateButton(valueStr, elements.btnNightsDecrease, elements.btnSvgNights);
     }
-    console.log(valueStr)
     return valueStr;
 }
 
@@ -183,6 +177,23 @@ export const autocomplete = function (inp, arr) {
     });
 }
 
+//Error window
+export const openErrorWindow = ( ) => {
+    elements.errorWindow.style.opacity = '1';
+    elements.errorWindow.style.visibility = 'visible';
+}
+
+export const btnError = () => {
+    elements.sectionOffer.style.display = 'grid';
+    elements.asideSearch.style.display = 'none';
+    elements.errorWindow.style.opacity = '0';
+    elements.errorWindow.style.visibility = 'hidden';
+    elements.btnSlidePanel.style.display = 'none';
+    elements.hotelDetails.style.display = 'none';
+    elements.favoritesSection.style.display = 'none';
+    elements.sectionList.style.display = 'none';
+}
+
 export const clearResult = () => {
     elements.searchHotelsBox.innerHTML = '';
 }
@@ -198,10 +209,39 @@ export const openSearch = () => {
     elements.searchHotelsBox.innerHTML = '';
     elements.asideSearch.style.display = 'none';
     elements.favoritesSection.style.display = 'none';
+    elements.btnSlidePanel.style.display = 'none';
+}
+
+export const openSlidePanel = () => {
+    elements.asideSearch.classList.remove('movepanelleft');
+    elements.asideSearch.classList.add('movepanelright');
+    elements.asideSearch.style.opacity = '1';
+    elements.asideSearch.style.visibility = 'visible';
+}
+
+export const closeSlidePanel = () => {
+    elements.asideSearch.classList.remove('movepanelright');
+    elements.asideSearch.classList.add('movepanelleft');
+    setTimeout(closeStylePanel, 350);
+}
+
+const closeStylePanel = () => {
+    elements.asideSearch.style.opacity = '0';
+    elements.asideSearch.style.visibility = 'hidden';
 }
 
 export const openAsideFilter = () => {
     elements.asideSearch.style.display = 'grid';
+    elements.btnSlidePanel.style.display = 'inline-block';
+    elements.asideSearch.style.opacity = '0';
+    elements.asideSearch.style.visibility = 'hidden';
+    elements.sectionList.style.display = 'grid';
+}
+
+export const closeAsideFilter = () => {
+    elements.asideSearch.style.display = 'none';
+    elements.asideSearch.classList.add('movepanelleft');
+    elements.btnSlidePanel.style.display = 'none';
 }
 
 const renderHotel = hotel => {
@@ -248,7 +288,7 @@ const renderHotel = hotel => {
             <aside class="search-list__price">
                 <div class="search-list__rating-box">
                     <p class="search-list__rating">Rating</p>
-                    <span class="number-rating">${hotel.rating}</span>
+                    <span class="number-rating search-list__count-rating">${hotel.rating}</span>
                 </div>
                 <div class="search-list__cost-box">
                     <span class="search-list__cost">${hotel.price}</span>
@@ -290,11 +330,11 @@ const renderHotelClass = hotel => {
             <aside class="search-list__price">
                 <div class="search-list__rating-box">
                     <p class="search-list__rating">Rating</p>
-                    <span class="search-list__rating-number number-rating">${hotel.rating}</span>
+                    <span class="search-list__rating-number number-rating search-list__count-rating">${hotel.rating}</span>
                 </div>
                 <div class="search-list__cost-box">
                     <span class="search-list__cost">${hotel.price}</span>
-                    <a class="btn search-list__btn" href="#${hotel.location_id}">Continue</a>
+                    <a class="btn-link search-list__btn" href="#${hotel.location_id}">Continue</a>
                 </div>
             </aside>
         </article>

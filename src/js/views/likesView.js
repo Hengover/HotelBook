@@ -15,7 +15,7 @@ export const closeFavoritesSection = () => {
 
 export const toggleLikeBtn = isLiked => {
     const iconString = isLiked ? 'icon-heart' : 'icon-heart-outlined';
-    document.querySelector('.section-details__btn-svg use').setAttribute('href', `./img/sprite.svg#${iconString}`);
+    document.querySelector('.hotel-details__btn-svg use').setAttribute('href', `./img/sprite.svg#${iconString}`);
 };
 
 export const deleteLike = id => {
@@ -46,7 +46,7 @@ export const renderLikeHotel = like => {
             </div>
         </div>
         <a class="btn card__btn" href="#${like.id}">View the details</a>
-        <button class="card__btn-close">
+        <button class="btn-close card__btn-close">
             <svg class="card__svg card__svg--close">
                 <use xlink:href="./img/sprite.svg#icon-close-solid"></use>
             </svg>

@@ -9,6 +9,10 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+
+    @media only screen and (max-width: $bp-700) {
+        font-size: 56%;
+    }
 }
 
 body {
@@ -19,16 +23,13 @@ body {
 
 .container{
     display: grid;
-    grid-template-rows: 8rem max-content 1fr auto;
+    grid-template-rows: 8rem max-content minmax(18rem, 1fr) max-content;
     min-height: 100vh;
     @include centerEl;
-}
 
-.container-search, .hotel-page, .container-likes{
-    display: grid;
-    grid-template-rows: 8rem 1fr auto;
-    min-height: 100vh;
-    @include centerEl;
+    @media only screen and (max-width: $bp-550) {
+        grid-template-rows: 12rem max-content minmax(18rem, 1fr) max-content;    
+    }
 }
 
 .svg-close{

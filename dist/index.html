@@ -1,89 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <title>HotelBook</title>
-<link href="./css/style.css" rel="stylesheet"></head>
-<body class="container">
-    <header class="header">
-        <nav class="header__nav">
-            <div class="header__logo-box">
-                <img src="./img/logo.png" alt="header" class="header__logo-img"> <!--"./img/logo.png"-->
-            </div>
-            <ul class="header__list">
-                <li class="header__item header__favorites">
-                    <svg class="header__svg header__svg--likes">
-                        <use xlink:href="./img/sprite.svg#icon-heart"></use>
-                    </svg>
-                    <span>Favorites</span>
-                </li>
-                <li class="header__item">Create account</li>
-                <li class="header__item">
-                    <svg class="header__svg header__svg--user">
-                        <use xlink:href="./img/sprite.svg#icon-user"></use>
-                    </svg>
-                    <span>Sign in</span>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section class="search">
-        <div class="search__box">
-            <form class="search__form" action="./search.html">
-                <input class="search__field search__field--place" type="text" placeholder="Where to?">
-                <input class="search__field search__field--checkin" type="date" placeholder="Check in">
-                <input class="search__field search__field--adults" type="number" min="0" max="100" placeholder="Adults">
-                <input class="search__field search__field--rooms" type="number" min="0" max="100" placeholder="Rooms">
-                <input class="search__field search__field--night" type="number" min="0" max="100" placeholder="Night">
-                <button class="search__btn">
-                    <svg class="search__svg">
-                        <use xlink:href="./img/sprite.svg#icon-search"></use>
-                    </svg>
-                    <span>Search</span>
-                </button>
-            </form>
-        </div>
-    </section>
-    <main class="main-content">
-        <section class="search-list">
-            <aside class="filters">
-                <form class="form-specify">
-                    <h2 class="heading-tertiary form-specify__heading">Filter:</h2>
-                    <fieldset class="form-specify__fieldset">
-                        <legend class="form-specify__legend">
-                            Hotel class
-                        </legend>
-                        <ul class="form-specify__list">
-                            <li class="form-specify__item">
-                                <input type="checkbox" class="form-specify__checkbox" id="5" value="5">
-                                <label class="form-specify__label" for="5">5 Stars</label>
-                            </li>
-                            <li class="form-specify__item">
-                                <input type="checkbox" class="form-specify__checkbox" id="4" value="4">
-                                <label class="form-specify__label" for="4">4 Stars</label>
-                            </li>
-                            <li class="form-specify__item">
-                                <input type="checkbox" class="form-specify__checkbox" id="3" value="3">
-                                <label class="form-specify__label" for="3">3 Stars</label>
-                            </li>
-                            <li class="form-specify__item">
-                                <input type="checkbox" class="form-specify__checkbox" id="2" value="2">
-                                <label class="form-specify__label" for="2">2 Stars</label>
-                            </li>
-                            <li class="form-specify__item">
-                                <input type="checkbox" class="form-specify__checkbox" id="1" value="1">
-                                <label class="form-specify__label" for="1">1 Star</label>
-                            </li>
-                        </ul>
-                    </fieldset>
-                </form>
-            </aside>
-            <section class="search-list__card">
-                <div class="search-list__article-box">
-                <!--
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"><title>HotelBook</title><link href="./css/style.css" rel="stylesheet"></head><body class="container"><header class="header"><nav class="header__nav"><div class="header__logo-box"><img src="./img/logo.png" alt="header" class="header__logo-img"><!--"./img/logo.png"--></div><ul class="header__list"><li class="header__item header__favorites"><svg class="header__svg header__svg--likes"><use xlink:href="./img/sprite.svg#icon-heart"></use></svg> <span>Favorites</span></li><li class="header__item">Create account</li><li class="header__item"><svg class="header__svg header__svg--user"><use xlink:href="./img/sprite.svg#icon-user"></use></svg> <span>Sign in</span></li></ul></nav></header><section class="search"><div class="search__box"><h1 class="heading-primary search__heading">Find hotels, homes, and much more...</h1><form class="search__form"><div class="search__autocomplete"><input class="search__field search__field--place" type="text" id="myInput" placeholder="Where to?"></div><input class="search__field search__field--checkin" type="date" placeholder="Check in"><div class="search__field-guests-box"><label class="search__label"><div class="search__svg-box"><svg class="search__svg-user"><use xlink:href="./img/sprite.svg#icon-user"></use></svg></div><span class="search__guest search__adult-count">1 adult</span> <span class="search__guest">&nbsp;&nbsp;·&nbsp; <span class="search__room-count">1 room</span> </span><span class="search__guest">&nbsp;&nbsp;·&nbsp; <span class="search__night-count">1 night</span></span></label><div class="search__popup-box" style="display: none;"><div class="search__popup-update-box"><span class="search__popup-name">Adults</span><div class="search__popup-input-box"><button class="search__popup-btn search__popup-btn-adults--decrease search__popup-btn--decrease"><svg class="search__btn-svg search__btn-decrease-svg search__btn-decrease-svg--adults"><use xlink:href="./img/sprite.svg#icon-minus"></use></svg></button><div class="search__popup-value"><span class="search__popup-count search__popup-count--adults">1</span></div><button class="search__popup-btn search__popup-btn-adults--increase"><svg class="search__btn-svg"><use xlink:href="./img/sprite.svg#icon-plus"></use></svg></button></div></div><div class="search__popup-update-box"><span class="search__popup-name">Rooms</span><div class="search__popup-input-box"><button class="search__popup-btn search__popup-btn-rooms--decrease search__popup-btn--decrease"><svg class="search__btn-svg search__btn-decrease-svg search__btn-decrease-svg--rooms"><use xlink:href="./img/sprite.svg#icon-minus"></use></svg></button><div class="search__popup-value"><span class="search__popup-count search__popup-count--rooms">1</span></div><button class="search__popup-btn search__popup-btn-rooms--increase"><svg class="search__btn-svg"><use xlink:href="./img/sprite.svg#icon-plus"></use></svg></button></div></div><div class="search__popup-update-box"><span class="search__popup-name">Night</span><div class="search__popup-input-box"><button class="search__popup-btn search__popup-btn-nights--decrease search__popup-btn--decrease"><svg class="search__btn-svg search__btn-decrease-svg search__btn-decrease-svg--nights"><use xlink:href="./img/sprite.svg#icon-minus"></use></svg></button><div class="search__popup-value"><span class="search__popup-count search__popup-count--nights">1</span></div><button class="search__popup-btn search__popup-btn-nights--increase"><svg class="search__btn-svg"><use xlink:href="./img/sprite.svg#icon-plus"></use></svg></button></div></div></div></div><button class="search__btn"><svg class="search__svg"><use xlink:href="./img/sprite.svg#icon-search"></use></svg> <span>Search</span></button></form></div></section><main class="main-content"><section class="search-list"><button class="btn search-list__btn-slide-panel">Filter</button><aside class="filters"><button class="btn-close form-specify__btn-close"><svg class="form-specify__svg-close"><use xlink:href="./img/sprite.svg#icon-close-solid"></use></svg></button><form class="form-specify"><fieldset class="form-specify__fieldset"><legend class="form-specify__legend"><h2 class="heading-fourth form-specify__heading">Hotel class</h2></legend><ul class="form-specify__list"><li class="form-specify__item"><input type="checkbox" class="form-specify__checkbox" id="5" value="5"> <label class="form-specify__label" for="5">5 Stars</label></li><li class="form-specify__item"><input type="checkbox" class="form-specify__checkbox" id="4" value="4"> <label class="form-specify__label" for="4">4 Stars</label></li><li class="form-specify__item"><input type="checkbox" class="form-specify__checkbox" id="3" value="3"> <label class="form-specify__label" for="3">3 Stars</label></li><li class="form-specify__item"><input type="checkbox" class="form-specify__checkbox" id="2" value="2"> <label class="form-specify__label" for="2">2 Stars</label></li><li class="form-specify__item"><input type="checkbox" class="form-specify__checkbox" id="1" value="1"> <label class="form-specify__label" for="1">1 Star</label></li></ul></fieldset></form></aside><section class="search-list__card"><div class="search-list__article-box"><!--
                 <article class="search-list__article">
                     <div class="search-list__description">
                         <div class="search-list__head">
@@ -134,160 +49,72 @@
                         </div>
                     </aside>
                 </article>
-            -->
-                </div>
-
-                <div class="search-list__pagination">
-                    <!--
+            --></div><div class="search-list__pagination"><!--
                     <button class="search-list__pagination-button search-list__button-active">1</button>
                     <button class="search-list__pagination-button">2</button>
                     <button class="search-list__pagination-button">3</button>
-                    -->
+                    --></div></section></section><section class="section-details"><!--
+             <div class="hotel-details__name-box">
+            <div class="hotel-details__desc-box">
+                <div class="hotel-details__name-class-box">
+                    <p class="hotel-details__name">${hotel.name}</p>
+                    <div class="hotel-details__svg-class-box">
+                        <span class="hotel-details__class-hotel">4.0</span>
+                        <svg class="hotel-details__svg-class hotel-details__svg-class--star">
+                            <use xlink:href="./img/sprite.svg#icon-star-full"></use>
+                        </svg>
+                        <button class="hotel-details__btn-svg">
+                            <svg class="hotel-details__svg-class hotel-details__svg-class--likes">
+                                <use xlink:href="./img/sprite.svg#icon-heart${isLiked ? '' : '-outlined'}"></use>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-            </section>
+                <address class="hotel-details__address">${hotel.address}</address>
+                <ul class="hotel-details__list-link">
+                    <li class="hotel-details__item-link">
+                        <svg class="hotel-details__svg-link">
+                            <use xlink:href="./img/sprite.svg#icon-envelope"></use>
+                        </svg>
+                        <span>${hotel.email}</span>
+                    </li>
+                    <li class="hotel-details__item-link">
+                        <svg class="hotel-details__svg-link">
+                            <use xlink:href="./img/sprite.svg#icon-phone"></use>
+                        </svg>
+                        <span>${hotel.phone}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="hotel-details__sale-box">
+                <span class="hotel-details__sale">${hotel.price}</span>
+                <button class="btn">Reserve</button>
+                </div>
+            </div>
+            <figure class="hotel-details__figure">
+                <img src="${hotel.photo.images.original.url}" alt="Hotel image" class="hotel-details__img">
+            </figure>
+            <p class="hotel-details__description-hotel">${hotel.description}</p>
+            <h3 class="heading-tertiary hotel-details__amenities-heading">Main amenities</h3>
+            <div class="hotel-details__amenities-box">
+                <ul class="hotel-details__amenities-list">${renderAmenities(hotel.amenities, 0, 10)}</ul>
+                <ul class="hotel-details__amenities-list">${renderAmenities(hotel.amenities, 10, 20)}</ul>
+                <ul class="hotel-details__amenities-list">${renderAmenities(hotel.amenities, 20, 30)}</ul>
+            </div>
+            <div class="hotel-details__reviews-score">
+                <h3 class="heading-tertiary hotel-details__amenities-heading">Guest Reviews</h3>
+                <span class="hotel-details__reviews-number number-rating">${hotel.rating}</span>
+            </div>
             
-        </section>
-
-        <section class="section-details">
-            <!--
-            <div class="section-details__name-box">
-                <div class="section-details__desc-box">
-                    <div class="section-details__name-class-box">
-                        <p class="section-details__name">${hotel.name}</p>
-                        <div class="section-details__svg-class-box">
-                            <span class="section-details__class-hotel">4.0</span>
-                            <svg class="section-details__svg-class section-details__svg-class--star">
-                                <use xlink:href="./img/sprite.svg#icon-star-full"></use>
-                            </svg>
-                            <button class="section-details__btn-svg">
-                                <svg class="section-details__svg-class section-details__svg-class--likes">
-                                    <use xlink:href="./img/sprite.svg#icon-heart-outlined"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <address class="section-details__address">${hotel.address}</address>
-                    <ul class="section-details__list-link">
-                        <li class="section-details__item-link">
-                            <svg class="section-details__svg-link">
-                                <use xlink:href="./img/sprite.svg#icon-envelope"></use>
-                            </svg>
-                            <span>${hotel.email}</span>
-                        </li>
-                        <li class="section-details__item-link">
-                            <svg class="section-details__svg-link">
-                                <use xlink:href="./img/sprite.svg#icon-phone"></use>
-                            </svg>
-                            <span>${hotel.phone}</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="section-details__sale-box">
-                    <span class="section-details__sale">${hotel.price}</span>
-                    <button class="btn">Reserve</button>
-                    </div>
-                </div>
-                <figure class="section-details__figure">
-                    <img src="${hotel.photo.images.large.url}" alt="Hotel image" class="section-details__img">
-                </figure>
-                <p class="section-details__description-hotel">${hotel.description}</p>
-                <h3 class="heading-tertiary section-details__amenities-heading">Main amenities</h3>
-                <div class="section-details__amenities-box">
-                    <ul class="section-details__amenities-list">${renderAmenities(hotel.amenities, 0, 10)}</ul>
-                    <ul class="section-details__amenities-list">${renderAmenities(hotel.amenities, 10, 20)}</ul>
-                    <ul class="section-details__amenities-list">${renderAmenities(hotel.amenities, 20, 30)}</ul>
-                </div>
-                <div class="section-details__reviews-box">
-                    
-                    <div class="section-details__review">
-                        <div class="section-details__review-user-desc">
-                            <figure class="section-details__review-figure">
-                                <img src="./img/Apartments.jpg" alt="Reviews" class="section-details__review-img">
-                            </figure>
-                            <div class="section-details__review-user-name-date">
-                                <h3 class="section-details__review-user-name heading-tertiary">Jack Stewart</h3>
-                                <span class="section-details__review-user-date">2020.15.98</span>
-                            </div>
-                        </div>
-                        <p class="section-details__review-text">beautiful place</p>
-                    </div>
-                    <div class="section-details__review">
-                        <div class="section-details__review-user-desc">
-                            <figure class="section-details__review-figure">
-                                <img src="./img/Apartments.jpg" alt="Reviews" class="section-details__review-img">
-                            </figure>
-                            <div class="section-details__review-user-name-date">
-                                <h3 class="section-details__review-user-name heading-tertiary">Jack Stewart</h3>
-                                <span class="section-details__review-user-date">2020.15.98</span>
-                            </div>
-                        </div>
-                        <p class="section-details__review-text">beautiful place</p>
-                    </div>
-                    <div class="section-details__review">
-                        <div class="section-details__review-user-desc">
-                            <figure class="section-details__review-figure">
-                                <img src="./img/Apartments.jpg" alt="Reviews" class="section-details__review-img">
-                            </figure>
-                            <div class="section-details__review-user-name-date">
-                                <h3 class="section-details__review-user-name heading-tertiary">Jack Stewart</h3>
-                                <span class="section-details__review-user-date">2020.15.98</span>
-                            </div>
-                        </div>
-                        <p class="section-details__review-text">beautiful place</p>
-                    </div>
-                    <div class="section-details__review">
-                        <div class="section-details__review-user-desc">
-                            <figure class="section-details__review-figure">
-                                <img src="./img/Apartments.jpg" alt="Reviews" class="section-details__review-img">
-                            </figure>
-                            <div class="section-details__review-user-name-date">
-                                <h3 class="section-details__review-user-name heading-tertiary">Jack Stewart</h3>
-                                <span class="section-details__review-user-date">2020.15.98</span>
-                            </div>
-                        </div>
-                        <p class="section-details__review-text">beautiful place</p>
-                    </div>
-                    <div class="section-details__review">
-                        <div class="section-details__review-user-desc">
-                            <figure class="section-details__review-figure">
-                                <img src="./img/Apartments.jpg" alt="Reviews" class="section-details__review-img">
-                            </figure>
-                            <div class="section-details__review-user-name-date">
-                                <h3 class="section-details__review-user-name heading-tertiary">Jack Stewart</h3>
-                                <span class="section-details__review-user-date">2020.15.98</span>
-                            </div>
-                        </div>
-                        <p class="section-details__review-text">beautiful place</p>
-                    </div>
-                    <div class="section-details__review">
-                        <div class="section-details__review-user-desc">
-                            <figure class="section-details__review-figure">
-                                <img src="./img/Apartments.jpg" alt="Reviews" class="section-details__review-img">
-                            </figure>
-                            <div class="section-details__review-user-name-date">
-                                <h3 class="section-details__review-user-name heading-tertiary">Jack Stewart</h3>
-                                <span class="section-details__review-user-date">2020.15.98</span>
-                            </div>
-                        </div>
-                        <p class="section-details__review-text">beautiful place</p>
-                    </div>
-                </div>
-                <button class="section-details__btn-svg section-details__btn-close">
-                    <svg class="section-details__svg-close">
-                        <use xlink:href="./img/sprite.svg#icon-close"></use>
-                    </svg>
-                </button>
-                  -->
-        </section>
-
-        <section class="section-favorites">
-            <button class="btn-close section-favorites__btn-close">
+            <div class="hotel-details__reviews-box">
+                ${renderReviews(hotel.room_tips)}
+            </div>
+            <button class="btn-close hotel-details__btn-close">
                 <svg class="svg-close">
                     <use xlink:href="./img/sprite.svg#icon-close"></use>
                 </svg>
             </button>
-            <div class="section-favorites__cards-box">
-                <!--
+                  --></section><section class="section-favorites"><button class="btn-close section-favorites__btn-close"><svg class="svg-close"><use xlink:href="./img/sprite.svg#icon-close"></use></svg></button><div class="section-favorites__cards-box"><h1 class="heading-primary card__main-heading">Favorites</h1><!--
                 <div class="card">
                     <img src="./img/Apartments.jpg" alt="Image hotel" class="card__img">
                     <div class="card__details">
@@ -310,80 +137,4 @@
                         </svg>
                     </button>
                 </div>
-                -->
-            </div>
-        </section>
-
-        <section class="offer">
-            <h2 class="heading-secondary">We offer you a choise...</h2>
-            <div class="offer__box">
-                <div class="offer__housing">
-                    <img src="./img/Hotels.jpg" alt="Hotels" class="offer__img">
-                    <h3 class="heading-tertiary">Hotels</h3>
-                </div>
-                <div class="offer__housing">
-                    <img src="./img/Cottages.jpg" alt="Cottages" class="offer__img">
-                    <h3 class="heading-tertiary">Cottages</h3>
-                </div>
-                <div class="offer__housing">
-                    <img src="./img/Motels.jpg" alt="Motels" class="offer__img">
-                    <h3 class="heading-tertiary">Motels</h3>
-                </div>
-                <div class="offer__housing">
-                    <img src="./img/Resorts.jpg" alt="Resorts" class="offer__img">
-                    <h3 class="heading-tertiary">Resorts</h3>
-                </div>
-                <div class="offer__housing">
-                    <img src="./img/Villas.jpg" alt="Villas" class="offer__img">
-                    <h3 class="heading-tertiary">Villas</h3>
-                </div>
-                <div class="offer__housing">
-                    <img src="./img/Apartments.jpg" alt="Apartments" class="offer__img">
-                    <h3 class="heading-tertiary">Apartments</h3>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer class="footer">
-        <div class="footer__logo-box">
-            <img src="./img/footer-logo.png" alt="Logo" class="footer__logo">
-        </div>
-        <p class="copyright">
-            &copy; 2020 HotelBook
-        </p>
-        <div class="footer__social">
-            <a href="#" class="footer__social-link">
-                <svg class="footer__svg">
-                    <use xlink:href="./img/sprite.svg#icon-google"></use>
-                </svg>
-            </a>
-            <a href="#" class="footer__social-link">
-                <svg class="footer__svg">
-                    <use xlink:href="./img/sprite.svg#icon-instagram"></use>
-                </svg>
-            </a>
-            <a href="#" class="footer__social-link">
-                <svg class="footer__svg">
-                    <use xlink:href="./img/sprite.svg#icon-linkedin"></use>
-                </svg>
-            </a>
-            <a href="#" class="footer__social-link">
-                <svg class="footer__svg">
-                    <use xlink:href="./img/sprite.svg#icon-tumblr"></use>
-                </svg>
-            </a>
-            <a href="#" class="footer__social-link">
-                <svg class="footer__svg">
-                    <use xlink:href="./img/sprite.svg#icon-twitter"></use>
-                </svg>
-            </a>
-            <a href="#" class="footer__social-link">
-                <svg class="footer__svg">
-                    <use xlink:href="./img/sprite.svg#icon-youtube"></use>
-                </svg>
-            </a>
-        </div>
-    </footer>
-<script src="js/bundle.js"></script></body>
-</html>
+                --></div></section><section class="offer"><h2 class="heading-secondary offer__heading">We offer you a choise...</h2><div class="offer__box"><div class="offer__housing"><img src="./img/Hotels.jpg" alt="Hotels" class="offer__img"><h3 class="heading-tertiary offer__heading-3">Hotels</h3></div><div class="offer__housing"><img src="./img/Cottages.jpg" alt="Cottages" class="offer__img"><h3 class="heading-tertiary offer__heading-3">Cottages</h3></div><div class="offer__housing"><img src="./img/Motels.jpg" alt="Motels" class="offer__img"><h3 class="heading-tertiary offer__heading-3">Motels</h3></div><div class="offer__housing"><img src="./img/Resorts.jpg" alt="Resorts" class="offer__img"><h3 class="heading-tertiary offer__heading-3">Resorts</h3></div><div class="offer__housing"><img src="./img/Villas.jpg" alt="Villas" class="offer__img"><h3 class="heading-tertiary offer__heading-3">Villas</h3></div><div class="offer__housing"><img src="./img/Apartments.jpg" alt="Apartments" class="offer__img"><h3 class="heading-tertiary offer__heading-3">Apartments</h3></div></div></section><div class="error-popup"><div class="error-popup__content"><h1 class="heading-primary error-popup__heading">Whoops!</h1><p class="error-popup__text">Something wrong the page. Please try reloading the page.</p><button class="btn error-popup__btn"><svg class="error-popup__svg"><use xlink:href="./img/sprite.svg#icon-arrow-thin-left"></use></svg> <span>Return to the home page</span></button></div></div></main><footer class="footer"><div class="footer__logo-box"><img src="./img/footer-logo.png" alt="Logo" class="footer__logo"></div><p class="copyright">&copy; 2020 HotelBook</p><div class="footer__social"><a href="#" class="footer__social-link"><svg class="footer__svg"><use xlink:href="./img/sprite.svg#icon-google"></use></svg> </a><a href="#" class="footer__social-link"><svg class="footer__svg"><use xlink:href="./img/sprite.svg#icon-instagram"></use></svg> </a><a href="#" class="footer__social-link"><svg class="footer__svg"><use xlink:href="./img/sprite.svg#icon-linkedin"></use></svg> </a><a href="#" class="footer__social-link"><svg class="footer__svg"><use xlink:href="./img/sprite.svg#icon-tumblr"></use></svg> </a><a href="#" class="footer__social-link"><svg class="footer__svg"><use xlink:href="./img/sprite.svg#icon-twitter"></use></svg> </a><a href="#" class="footer__social-link"><svg class="footer__svg"><use xlink:href="./img/sprite.svg#icon-youtube"></use></svg></a></div></footer><script src="js/bundle.js"></script></body></html>

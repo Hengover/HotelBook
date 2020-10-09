@@ -11,14 +11,17 @@
 
     &__heading{
         text-align: center;
-        line-height: 0;
-        margin-bottom: 4rem;
     }
 
     &__form{
         display: grid; 
         grid-template-columns: minmax(min-content, 38rem) minmax(min-content, 15rem) minmax(min-content, 25rem) minmax(min-content, max-content);  
         justify-content: center;
+
+        @media only screen and (max-width: $bp-900) {
+            grid-template-columns: minmax(min-content, 1fr);
+            grid-template-rows: repeat(4, 5rem);
+        }
 
         &>*{
             outline: .3rem solid $color-green;
@@ -55,7 +58,6 @@
     }
 
     &__autocomplete-active {
-        /*when navigating through the items using the arrow keys:*/
         background-color: $color-grey !important;
     }
 
@@ -100,6 +102,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media only screen and (max-width: $bp-900) {
+            justify-content: start;
+            padding-left: 1rem;
+        }
     }
 
     &__svg-box{
@@ -123,6 +130,11 @@
         border-radius: .3rem;
         box-shadow: 0 2rem 16rem rgba($color-dark, .15);
         padding: 2rem;
+
+        @media only screen and (max-width: $bp-900) {
+            width: 100%;
+            top: 105%;
+        }
     }
 
     &__popup-update-box{
@@ -227,36 +239,50 @@
 }
 
 .form-specify{
-    border: .1rem solid $color-grey-1;
+    border: none;
     border-radius: .3rem;
+    background-color: #f5f4f0;
+    padding: .7rem .8rem;
 
-    &__heading{
-        margin-left: .5rem;
+    @media only screen and (max-width: $bp-large) {
+        z-index: 13500;
+    }
+
+    &__btn-close{
+        display: none;
+        background-color: transparent;
+        top: 3%;
+        right: 6%;
+        z-index: 15000;
+
+        @media only screen and (max-width: $bp-large) {
+            display: block;
+        }
+    }
+
+    &__svg-close{
+        width: 2rem;
+        height: 2rem;
     }
 
     &__fieldset{
         border: none;
+        padding: 0;
     }
 
     &>*:not(:first-child) {
         border-top: .1rem solid $color-grey-1;
     }
 
-    &__legend{
-        font-size: 1.5rem;
+    &__heading{
         font-weight: 500;
     }
 
-    &__list{}
-
     &__item{
         list-style: none;
-
         display: flex;
         align-items: center;
     }
-
-    &__checkbox{}
 
     &__label{
         font-size: 1.3rem;

@@ -1,4 +1,5 @@
 import axios from 'axios'; //Import axios package
+import * as searchView from '../views/searchView';
 
 export default class Search {
     constructor(queryPlace, adults, checkin, rooms, night) {
@@ -15,14 +16,12 @@ export default class Search {
                 "method": "GET",
 	            "headers": {
                     "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-                    "x-rapidapi-key": "ce71953e95msheace372770fab61p1a592ejsn8abc30a2e1a5"
+		            "x-rapidapi-key": "36471a185cmshdf05c53bdd3b3dbp14d909jsnc76af03da835"
                 }
             })
-            console.log(res);
             this.locationId = res.data.data[0].result_object.location_id;
-            console.log(this.locationId);
         } catch(error) {
-            alert(error);
+            searchView.openErrorWindow();
         }
     }
 
@@ -32,14 +31,12 @@ export default class Search {
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-                    "x-rapidapi-key": "ce71953e95msheace372770fab61p1a592ejsn8abc30a2e1a5"
+		            "x-rapidapi-key": "36471a185cmshdf05c53bdd3b3dbp14d909jsnc76af03da835"
                 }
             })
             this.hotelList = res.data.data;
-            console.log(this.hotelList);
-            console.log(res);
         } catch(error) {
-            alert(error);
+            searchView.openErrorWindow();
         }
     }
 
@@ -49,13 +46,12 @@ export default class Search {
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-                    "x-rapidapi-key": "ce71953e95msheace372770fab61p1a592ejsn8abc30a2e1a5"
+		            "x-rapidapi-key": "36471a185cmshdf05c53bdd3b3dbp14d909jsnc76af03da835"
                 }
             })
             this.hotelListFilter = res.data.data;
-            console.log(this.hotelListFilter);
         } catch(error) {
-            alert(error);
+            searchView.openErrorWindow();
         }
     }
 }

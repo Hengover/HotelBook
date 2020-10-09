@@ -1,0 +1,45 @@
+.error-popup{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-dark, .8);
+    z-index: 12000;
+    visibility: hidden;
+    backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: minmax(min-content, 80rem);
+    grid-template-rows: max-content;
+    justify-content: center;
+    align-content: center;
+
+    &__content{
+        padding: 3rem;
+        border-radius: .3rem;
+        background-color: $color-white;
+    }
+
+    &__heading{
+        line-height: 0;
+    }
+
+    &__text{
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    &__btn{
+        display: flex;
+        align-items: center;
+        padding: 1.3rem 2rem;
+    }
+
+    &__svg{
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: currentColor;
+        margin-right: 1rem;
+    }
+}

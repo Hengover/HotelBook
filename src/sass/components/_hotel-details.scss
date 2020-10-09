@@ -1,29 +1,22 @@
 .hotel-details{
-    grid-column: center-start / center-end;
-    display: grid;
-    grid-template-columns: minmax(min-content, 28rem) 1fr;
-}
 
-.section-details{
-    grid-column: center-start / center-end;
-    margin: 5rem 0;
-    display: none;
-    grid-template-columns: 1fr;
-    grid-template-rows: max-content;
-    grid-row-gap: 3rem;
-    position: relative;
-    
     &__name-box{
         display: grid;
-        grid-template-columns: max-content 1fr max-content;
+        grid-template-columns: minmax(min-content, max-content) 1fr max-content;
+
+        @media only screen and (max-width: $bp-400) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__name-class-box{
         grid-column: 1 / 2;
         grid-row: 1 / 2;
-
         display: flex;
 
+        @media only screen and (max-width: $bp-small) {
+            flex-direction: column;
+        }
     }
 
     &__name{
@@ -54,6 +47,10 @@
         grid-column: 1 / 2;
         grid-row: 3 / 4;
         display: flex;
+
+        @media only screen and (max-width: $bp-448) {
+            flex-direction: column;
+        }
     }
 
     &__item-link{
@@ -76,7 +73,7 @@
 
     &__desc-box{
         display: grid;
-        grid-template-columns: max-content;
+        grid-template-columns: minmax(min-content, max-content);
         grid-template-rows: repeat(3, max-content);
     }
 
@@ -108,6 +105,10 @@
         grid-column: 3 / 4;
         display: flex;
         flex-direction: column;
+
+        @media only screen and (max-width: $bp-350) {
+            grid-column: 1 / 2;
+        }
     }
 
     &__btn-svg{
@@ -145,10 +146,9 @@
         display: flex;
         justify-content: space-around;
 
-    }
-
-    &__amenities-list{
-
+        @media only screen and (max-width: $bp-448) {
+            flex-direction: column;
+        }
     }
 
     &__amenities-item{
@@ -184,10 +184,6 @@
         align-items: start;
     }
 
-    &__review{
-
-    }
-
     &__review-user-desc{
         display: flex;
         align-items: center;
@@ -214,5 +210,14 @@
 
     &__review-text{
         font-size: 1.6rem;
+    }
+
+    &__btn-close{
+        top: -2.55%;
+        right: 0;
+
+        @media only screen and (max-width: $bp-448) {
+            top: -1.5%;
+        }
     }
 }

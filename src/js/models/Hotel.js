@@ -11,7 +11,7 @@ export default class Hotel{
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-		            "x-rapidapi-key": "ce71953e95msheace372770fab61p1a592ejsn8abc30a2e1a5"
+		            "x-rapidapi-key": "36471a185cmshdf05c53bdd3b3dbp14d909jsnc76af03da835"
                 }
             })
             this.hotel = res.data.data[0];
@@ -21,11 +21,8 @@ export default class Hotel{
             this.address = res.data.data[0].address;
             this.rating = res.data.data[0].rating;
             this.price = res.data.data[0].price;
-
-            //this.persistData();
-            console.log(this.hotel);
         } catch(error) {
-            console.log(error);
+            searchView.openErrorWindow();
         }
     }
 
