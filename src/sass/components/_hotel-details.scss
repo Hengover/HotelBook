@@ -4,7 +4,7 @@
         display: grid;
         grid-template-columns: minmax(min-content, max-content) 1fr max-content;
 
-        @media only screen and (max-width: $bp-400) {
+        @media only screen and (max-width: $bp-448) {
             grid-template-columns: 1fr;
         }
     }
@@ -48,7 +48,7 @@
         grid-row: 3 / 4;
         display: flex;
 
-        @media only screen and (max-width: $bp-448) {
+        @media only screen and (max-width: $bp-small) {
             flex-direction: column;
         }
     }
@@ -106,7 +106,7 @@
         display: flex;
         flex-direction: column;
 
-        @media only screen and (max-width: $bp-350) {
+        @media only screen and (max-width: $bp-448) {
             grid-column: 1 / 2;
         }
     }
@@ -123,14 +123,20 @@
     }
 
     &__figure{
-        width: 100%;
         height: 52rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            height: auto;
+        }
     }
 
     &__img{
         width: 100%;
         height: 100%;
-        background-size: cover;
+
+        @media only screen and (max-width: $bp-medium) {
+            height: auto;
+        }
     }
 
     &__description-hotel{

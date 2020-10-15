@@ -66,11 +66,11 @@
 
         &:active,
         &:focus{
-            box-shadow: 0 0 0 .03rem $color-dark inset;
+            box-shadow: 0 0 0 .1rem $color-dark inset;
         }
 
         &:hover{
-            box-shadow: 0 0 0 .03rem $color-dark inset;
+            box-shadow: 0 0 0 .1rem $color-dark inset;
         }
 
         &--place{
@@ -90,8 +90,13 @@
         background-color: $color-white;
         position: relative;
 
+        &:active,
+        &:focus{
+            box-shadow: 0 0 0 .1rem $color-dark inset;
+        }
+
         &:hover{
-            box-shadow: 0 0 0 .03rem $color-dark inset;
+            box-shadow: 0 0 0 .1rem $color-dark inset;
         }
     }
 

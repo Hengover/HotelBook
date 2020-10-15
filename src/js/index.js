@@ -74,6 +74,7 @@ const controlSearch = async () => {
         if(queryPlace, checkin, adults, rooms, nights) {
             state.search = new Search(queryPlace, adults, checkin, rooms, nights);
             try {
+                elements.searchBtn.disabled = true;
                 renderLoader(elements.mainContent);
                 searchView.clearPaginationBox();
                 await state.search.getLocationId();
@@ -86,6 +87,7 @@ const controlSearch = async () => {
             } catch(error){
                 searchView.openErrorWindow();
             }
+            elements.searchBtn.disabled = false;
         }
 }
 
@@ -154,6 +156,7 @@ const targetHotel = async () => {
         } catch(error) {
             searchView.openErrorWindow();
         }
+        window.location.hash = '';
     }
 }
 
@@ -183,7 +186,6 @@ elements.hotelDetails.addEventListener('click', e => {
 const controlLike = () => {
     if(!state.likes) state.likes = new Likes();
     const currentId = state.hotel.id;
-    console.log(currentId);
 
     //User has not yet liked current recipe
     
@@ -233,10 +235,8 @@ elements.hotelDetails.addEventListener('click', e => {
 elements.favoritesSection.addEventListener('click', e => {
     if(e.target.matches('.card__btn-close, .card__btn-close *')) {
         const id = e.target.closest('.card').dataset.itemid;
-        console.log(id)
         
         state.likes.deleteLike(id);
-        console.log(state.likes);
         //Delete item on UI
         likesView.deleteLikeBtnClose(id);
     }  
