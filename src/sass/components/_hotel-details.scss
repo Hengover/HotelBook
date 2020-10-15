@@ -124,6 +124,9 @@
 
     &__figure{
         height: 52rem;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
 
         @media only screen and (max-width: $bp-medium) {
             height: auto;
@@ -132,11 +135,6 @@
 
     &__img{
         width: 100%;
-        height: 100%;
-
-        @media only screen and (max-width: $bp-medium) {
-            height: auto;
-        }
     }
 
     &__description-hotel{
